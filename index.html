@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discover More Magdiwang | Magdiwang Tourism Office</title>
+  <meta name="description" content="Explore Magdiwang, Sibuyan Island, Romblon: Mt. Guiting-Guiting, waterfalls, food, lodging, activities and events.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/map.css">
+</head>
+<body>
+ 
+  <header class="nav">
+    <a class="nav__logos" href="#top" aria-label="Magdiwang Tourism home">
+      <img src="assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+      <a href="#lodging">Lodging</a>
+      <a href="#foods">Foods</a>
+      <a href="#tourist-spot">Tourist Spot</a>
+      <a href="#activities">Activities</a>
+      <a href="#events">Events</a>
+      <a href="#travel-guide">Travel Guide</a>
+    </nav>
+  </header>
+ 
+  <main id="top">
+    <section class="hero">
+      <div class="hero__text">
+        <h1><span class="hero__light">DISCOVER MORE</span><span class="hero__brand">MAGDIWANG</span></h1>
+        <p>[Insert tourism tagline / small caption]</p>
+        <div class="hero__btns">
+          <a class="btn btn--outline" href="#discover">Explore Magdiwang</a>
+          <a class="btn btn--outline" href="#travel-guide">Plan Your Visit</a>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="discover" id="discover">
+      <div class="wrap">
+        <h2>DISCOVER</h2>
+        <p class="lead">Explore the island through immersive photography, curated categories, and the stories that make each destination unforgettable.</p>
+ 
+        <div class="cards">
+          <a class="card" href="#tourist-spot" id="tourist-spot">
+            <img src="assets/card-1.webp" alt="Mt. Guiting-Guiting summit sign" loading="lazy">
+            <span class="pill">Discover</span>
+            <div class="card__body">
+              <div class="meta"><span>SIBUYAN ISLAND</span><span>2,058m</span></div>
+              <h3>Mt. Guiting-Guiting</h3>
+              <p>A rugged peak with cloud-shrouded ridges, mossy forests, and a climb that feels like a journey through the island's wild heart.</p>
+            </div>
+          </a>
+          <a class="card" href="#nature">
+            <img src="assets/card-2.webp" alt="Waterfall and limestone cliffs" loading="lazy">
+            <span class="pill">Discover</span>
+            <div class="card__body">
+              <div class="meta"><span>MAGDIWANG</span></div>
+              <h3>Nature</h3>
+              <p>Waterfalls, limestone cliffs, and quiet coastal coves that invite slow exploration and a deep connection to the island's landscape.</p>
+            </div>
+          </a>
+          <a class="card" href="#foods" id="foods">
+            <img src="assets/card-3.webp" alt="Local dish" loading="lazy">
+            <span class="pill">Discover</span>
+            <div class="card__body">
+              <div class="meta"><span>MAGDIWANG</span></div>
+              <h3>Foods</h3>
+              <p>Fresh seafood, island harvests, and simple coastal cooking that celebrates the flavors of the sea and the surrounding hills.</p>
+            </div>
+          </a>
+          <a class="card" href="#lodging" id="lodging">
+            <img src="assets/card-4.webp" alt="Island lodge" loading="lazy">
+            <span class="pill">Discover</span>
+            <div class="card__body">
+              <div class="meta"><span>MAGDIWANG</span></div>
+              <h3>Lodging</h3>
+              <p>Quiet beachfront stays, hillside retreats, and simple island lodges designed for rest, ocean views, and a slower pace.</p>
+            </div>
+          </a>
+          <a class="card" href="#activities" id="activities">
+            <img src="assets/card-5.webp" alt="Kayaking on the water" loading="lazy">
+            <span class="pill">Discover</span>
+            <div class="card__body">
+              <div class="meta"><span>MAGDIWANG</span></div>
+              <h3>Activities</h3>
+              <p>Snorkelling, trekking, island hopping, and quiet moments of discovery that turn every day into a memorable adventure.</p>
+            </div>
+          </a>
+          <a class="card" href="#events" id="events">
+            <img src="assets/card-6.webp" alt="Church lit up at night" loading="lazy">
+            <span class="pill">Discover</span>
+            <div class="card__body">
+              <div class="meta"><span>MAGDIWANG</span></div>
+              <h3>Events</h3>
+              <p>Festivals, harvest celebrations, and community gatherings that bring the island's culture, music, and warmth into focus.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="about" id="about">
+      <div class="wrap">
+        <h2>MAGDIWANG</h2>
+        <p>[INSERT DESCRIPTION ABOUT MAGDIWANG]</p>
+      </div>
+    </section>
+ 
+    <section class="gallery" id="gallery">
+      <div class="wrap">
+        <h2>Gallery</h2>
+        <div class="gallery__box">
+          <figure>
+            <img src="assets/gallery-1.jpg" alt="[Insert image description]" loading="lazy">
+            <figcaption>[INSERT IMAGE DESCRIPTION]</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="mapsec" id="map-section">
+      <div class="wrap">
+        <h2>Explore the Map</h2>
+        <p class="lead">Select a barangay to see its tourist spots.</p>
+        <div class="mapui">
+          <div id="map" role="application" aria-label="Interactive map of Magdiwang"></div>
+          <aside class="panel">
+            <div class="panel__head"><h2 id="panel-title">Barangays</h2><button id="panel-back" hidden>&larr; All</button></div>
+            <div class="chips" id="chips"></div>
+            <div class="panel__body" id="panel-body"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+ 
+    <section class="cta" id="travel-guide">
+      <h2>Start Discovering Magdiwang Now</h2>
+      <p>[Insert description]</p>
+      <a class="btn btn--white" href="#contact">CONTACT US</a>
+    </section>
+  </main>
+ 
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone:</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="#tourist-spot">Mt. Guiting-Guiting</a>
+        <a href="#nature">Nature</a>
+        <a href="#foods">Foods</a>
+        <a href="#lodging">Lodging</a>
+        <a href="#activities">Activities</a>
+        <a href="#events">Events</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="#about">About</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="#">Facebook</a><a href="#">Instagram</a></span>
+    </div>
+  </footer>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="data/spots.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
