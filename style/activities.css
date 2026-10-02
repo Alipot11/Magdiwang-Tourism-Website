@@ -1,0 +1,72 @@
+/* Activities page: builds on index.css (nav, footer, variables) */
+.nav__links a[aria-current="page"] { opacity: 1; border-bottom: 2px solid #fff; padding-bottom: 2px; }
+h2 { font-size: 2.4rem; font-weight: 700; }
+.lead { color: var(--muted); margin: 6px 0 32px; }
+
+/* Sliding hero, no buttons */
+.ahero { position: relative; min-height: 78vh; overflow: hidden; color: #fff; display: grid; align-items: end; background: var(--navy); }
+.ahero__track { position: absolute; inset: 0; display: flex; transition: transform .8s ease; }
+.ahero__slide { flex: 0 0 100%; background-size: cover; background-position: center; }
+.ahero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(15,23,42,.8), rgba(15,23,42,.25) 65%); }
+.ahero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
+.ahero__text { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 80px; }
+.ahero__text h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 600; }
+.ahero__text p { margin-top: 8px; font-size: 1.1rem; opacity: .92; }
+.ahero__dots { position: absolute; z-index: 3; left: 0; right: 0; bottom: 24px; display: flex; justify-content: center; gap: 10px; }
+.ahero__dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1.5px solid #fff; background: transparent; cursor: pointer; }
+.ahero__dots button[aria-current="true"] { background: #fff; }
+
+/* Sticky activity bar */
+.asub { position: sticky; top: 72px; z-index: 40; background: #fff; border-bottom: 1px solid #dde4ee; }
+.asub__in { display: flex; gap: 40px; align-items: center; }
+.asub__in a { padding: 20px 0; font-size: .95rem; color: var(--muted); border-bottom: 2px solid transparent; }
+.asub__in a.on { color: var(--text); border-bottom-color: var(--navy); font-weight: 500; }
+.asub__map { margin-left: auto; color: var(--text) !important; font-weight: 500; }
+.asub__map:hover { text-decoration: underline; }
+section[id] { scroll-margin-top: 130px; }
+
+/* Hiking: full-bleed photo, label on the image, one description below */
+.hike__photo { position: relative; min-height: 64vh; display: flex; align-items: flex-end; color: #fff; background: #dde4ee center / cover no-repeat; }
+.hike__photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,.8), rgba(15,23,42,0) 55%); }
+.hike__label { position: relative; width: 100%; padding-bottom: 36px; }
+.hike__label h2 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 600; }
+.hike__label p { font-size: 1.05rem; opacity: .92; margin-top: 4px; }
+.hike__desc { max-width: 640px; padding: 40px 0 72px; font-size: 1.15rem; line-height: 1.7; }
+
+/* Kayaking: text left, photos right */
+.kayak { background: var(--bg-soft); padding: 88px 0; }
+.kayak__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 56px; align-items: center; }
+.kayak__place { color: var(--muted); margin: 6px 0 16px; }
+.kayak__facts { margin: 24px 0; border-top: 1px solid #dde4ee; }
+.kayak__facts div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid #dde4ee; }
+.kayak__facts dt { color: var(--muted); }
+.kayak__facts dd { font-weight: 500; text-align: right; }
+.kayak__map { font-weight: 500; }
+.kayak__map:hover { text-decoration: underline; }
+.kayak__photos { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 460px; }
+.kayak__photos div { background: #dde4ee center / cover no-repeat; border-radius: 4px; min-height: 0; }
+.kayak__photos div:first-child { grid-row: 1 / 3; }
+
+/* Swimming: three spots */
+.swim { padding: 88px 0; }
+.swim__row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.swim__photo { height: 280px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+.swim__name { font-size: 1.25rem; font-weight: 600; margin-top: 14px; }
+.swim__meta { color: var(--muted); margin-top: 2px; }
+.swim__note { margin-top: 40px; padding-top: 20px; border-top: 1px solid #dde4ee; color: var(--muted); max-width: 640px; }
+
+@media (max-width: 900px) {
+  .kayak__grid { grid-template-columns: 1fr; gap: 32px; }
+  .kayak__photos { height: 340px; }
+  .swim__row { grid-template-columns: 1fr; }
+  .swim__photo { height: 220px; }
+}
+@media (max-width: 720px) {
+  .ahero { min-height: 62vh; }
+  .asub__in { gap: 20px; }
+  .asub__in a { font-size: .85rem; }
+  .hike__photo { min-height: 50vh; }
+  .kayak, .swim { padding: 56px 0; }
+  h2 { font-size: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) { .ahero__track { transition: none; } }

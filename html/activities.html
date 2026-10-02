@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activities | Magdiwang Tourism Office</title>
+  <meta name="description" content="Hiking, kayaking and swimming in Magdiwang, Sibuyan Island, Romblon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/activities.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__logos" href="../index.html" aria-label="Magdiwang Tourism home">
+      <img src="../assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="../assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+      <h1>MAGDIWANG</h1>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+        <a href="nature.html">Nature & Wildlife</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="foods.html">Foods</a>
+        <a href="../index.html#tourist-spot">Tourist Spot</a>
+        <a href="activities.html" aria-current="page">Things to Do</a>
+        <a href="../index.html#events">Events</a>
+        <a href="../index.html#travel-guide">Travel Guide</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ahero" aria-roledescription="carousel" aria-label="Photos of activities in Magdiwang">
+      <div class="ahero__track" id="slides">
+        <div class="ahero__slide" style="background-image:url('../assets/activities-hero-1.webp')"></div>
+        <div class="ahero__slide" style="background-image:url('../assets/activities-hero-2.webp')"></div>
+        <div class="ahero__slide" style="background-image:url('../assets/activities-hero-3.webp')"></div>
+      </div>
+      <div class="ahero__text">
+        <p class="ahero__eyebrow">Get out on the island</p>
+        <h1>Things to do</h1>
+        <p>Hike, paddle, and swim across Magdiwang</p>
+      </div>
+      <div class="ahero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
+    </section>
+
+    <div class="asub">
+      <div class="wrap asub__in" id="subnav">
+        <a href="#hiking" class="on">Hiking</a>
+        <a href="#kayaking">Kayaking</a>
+        <a href="#swimming">Swimming</a>
+        <a class="asub__map" href="../index.html#map-section">Show on map</a>
+      </div>
+    </div>
+
+    <section class="hike" id="hiking" aria-labelledby="hike-title">
+      <div class="hike__photo" id="hike-photo" role="img" aria-label="Hiking trail">
+        <div class="wrap hike__label"><h2 id="hike-title"></h2><p id="hike-place"></p></div>
+      </div>
+      <div class="wrap"><p class="hike__desc" id="hike-desc"></p></div>
+    </section>
+
+    <section class="kayak" id="kayaking" aria-labelledby="kayak-title">
+      <div class="wrap kayak__grid">
+        <div class="kayak__text">
+          <h2 id="kayak-title"></h2>
+          <p class="kayak__place" id="kayak-place"></p>
+          <p id="kayak-desc"></p>
+          <dl class="kayak__facts" id="kayak-facts"></dl>
+          <a class="kayak__map" href="../index.html#map-section">Show on map &rarr;</a>
+        </div>
+        <div class="kayak__photos" id="kayak-photos"></div>
+      </div>
+    </section>
+
+    <section class="swim" id="swimming" aria-labelledby="swim-title">
+      <div class="wrap">
+        <h2 id="swim-title">Swimming</h2>
+        <p class="lead" id="swim-intro"></p>
+        <div class="swim__row" id="swim-row"></div>
+        <p class="swim__note" id="swim-note"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="../assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone:</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="../index.html#tourist-spot">Mt. Guiting-Guiting</a>
+        <a href="../index.html#nature">Nature</a>
+        <a href="foods.html">Foods</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="activities.html">Activities</a>
+        <a href="../index.html#events">Events</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="../index.html#about">About</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="https://www.facebook.com/profile.php?id=61583923357666">Facebook</a><a href="#">Instagram</a></span>
+    </div>
+  </footer>
+
+  <script src="../data/activities.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/activities.js"></script>
+</body>
+</html>
