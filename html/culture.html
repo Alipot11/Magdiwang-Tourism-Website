@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Culture &amp; Heritage | Magdiwang Tourism Office</title>
+  <meta name="description" content="Heritage sites, traditions, crafts and language of Magdiwang, Sibuyan Island, Romblon.">
+  <link rel="icon" type="image/x-icon" href="../assets/tourism-logo.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/culture.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__logos" href="../index.html" aria-label="Magdiwang Tourism home">
+      <img src="../assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="../assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+      <h1>MAGDIWANG</h1>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+      <a href="nature.html">Nature & Wildlife</a>
+      <a href="lodging.html">Where to Stay</a>
+      <a href="foods.html">Where to Eat</a>
+      <a href="../index.html#tourist-spot">Tourist Spot</a>
+      <a href="activities.html">Things to Do</a>
+      <a href="../index.html#events">Festivals & Events</a>
+      <a href="culture.html" aria-current="page">Culture & Heritage</a>
+      <a href="../index.html#travel-guide">Travel Guide</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="chero" aria-roledescription="carousel" aria-label="Photos of culture and heritage in Magdiwang">
+      <div class="chero__track" id="slides">
+        <div class="chero__slide" style="background-image:url('../assets/culture-hero-1.webp')"></div>
+        <div class="chero__slide" style="background-image:url('../assets/culture-hero-2.webp')"></div>
+        <div class="chero__slide" style="background-image:url('../assets/culture-hero-3.webp')"></div>
+      </div>
+      <div class="chero__text">
+        <p class="chero__eyebrow">Where tradition lives</p>
+        <h1>Culture &amp; Heritage</h1>
+        <p>Stories, places, and traditions of Magdiwang</p>
+      </div>
+      <div class="chero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
+    </section>
+
+    <div class="csub">
+      <div class="wrap csub__in">
+        <a href="#story" class="on">Our story</a>
+        <a href="#sites">Heritage sites</a>
+        <a href="#traditions">Traditions</a>
+        <a href="#crafts">Crafts and language</a>
+        <a class="csub__map" href="../index.html#map-section">Show on map</a>
+      </div>
+    </div>
+
+    <section class="story" id="story">
+      <div class="wrap story__grid">
+        <div>
+          <p class="story__lede">[Insert one strong statement about Magdiwang's past and the people who shaped it.]</p>
+          <p class="story__body">[Insert two or three sentences on the history of the town and how its name and traditions came to be.]</p>
+        </div>
+        <div class="story__photo" style="background-image:url('../assets/culture-story.webp')" role="img" aria-label="Magdiwang heritage photo"></div>
+      </div>
+    </section>
+
+    <section class="sites" id="sites">
+      <div class="wrap">
+        <h2>Heritage sites</h2>
+        <p class="lead">Scroll to move from place to place</p>
+        <div class="sites__grid">
+          <div class="sites__stage" id="sstage" aria-live="polite">
+            <div class="sites__caption" id="scaption"></div>
+          </div>
+          <div class="sites__list" id="slist"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trad" id="traditions">
+      <div class="wrap">
+        <h2>Traditions and way of life</h2>
+        <p class="lead">Practices passed down across the nine barangays</p>
+        <div id="tlist"></div>
+      </div>
+    </section>
+
+    <section class="crafts" id="crafts">
+      <div class="wrap">
+        <h2>Crafts and language</h2>
+        <p class="lead">What the island makes and how it speaks</p>
+        <div class="crafts__grid" id="clist"></div>
+      </div>
+    </section>
+
+    <section class="respect" id="respect">
+      <div class="wrap">
+        <h2>Visit with respect</h2>
+        <div class="respect__grid">
+          <div><h3>Ask before photographing</h3><p>[Insert a line about asking permission before taking photos of people and ceremonies.]</p></div>
+          <div><h3>Dress for sacred sites</h3><p>[Insert a line about modest dress and behaviour at churches and heritage sites.]</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="../assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone:</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="nature.html">Mt. Guiting-Guiting</a>
+        <a href="nature.html">Nature</a>
+        <a href="foods.html">Foods</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="activities.html">Activities</a>
+        <a href="culture.html">Culture &amp; Heritage</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="../index.html#about">About</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="https://www.facebook.com/profile.php?id=61583923357666">Facebook</a><a href="#">Instagram</a></span>
+    </div>
+  </footer>
+
+  <script src="../data/culture.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/culture.js"></script>
+</body>
+</html>
