@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Where to Stay | Magdiwang Tourism Office</title>
+  <meta name="description" content="Resorts, inns, and homestays in Magdiwang, Sibuyan Island, Romblon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/lodging.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__logos" href="../index.html" aria-label="Magdiwang Tourism home">
+      <img src="../assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="../assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+      <h1>MAGDIWANG</h1>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+      <a href="lodging.html" aria-current="page">Lodging</a>
+      <a href="../index.html#foods">Foods</a>
+      <a href="../index.html#tourist-spot">Tourist Spot</a>
+      <a href="../index.html#activities">Activities</a>
+      <a href="../index.html#events">Events</a>
+      <a href="../index.html#travel-guide">Travel Guide</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="lhero" aria-roledescription="carousel" aria-label="Photos of places to stay in Magdiwang">
+      <div class="lhero__track" id="slides">
+        <div class="lhero__slide" style="background-image:url('../assets/lodging-hero-1.webp')"></div>
+        <div class="lhero__slide" style="background-image:url('../assets/lodging-hero-2.webp')"></div>
+        <div class="lhero__slide" style="background-image:url('../assets/lodging-hero-3.webp')"></div>
+      </div>
+      <div class="lhero__text">
+        <h1>Where to stay</h1>
+        <p>Resorts, inns, and homestays across the island</p>
+      </div>
+      <div class="lhero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
+    </section>
+
+    <section class="lodging">
+      <div class="wrap">
+        <div class="lodging__bar">
+          <div class="lodging__tabs" id="tabs" role="group" aria-label="Filter by type">
+            <button type="button" class="on" data-type="All">All</button>
+            <button type="button" data-type="Resort">Resorts</button>
+            <button type="button" data-type="Inn">Inns</button>
+            <button type="button" data-type="Homestay">Homestays</button>
+          </div>
+          <a class="lodging__map" href="../index.html#map-section">Show on map</a>
+        </div>
+        <div class="lodging__list" id="list" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="../assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone:</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="../index.html#tourist-spot">Mt. Guiting-Guiting</a>
+        <a href="../index.html#nature">Nature</a>
+        <a href="../index.html#foods">Foods</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="../index.html#activities">Activities</a>
+        <a href="../index.html#events">Events</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="../index.html#about">About</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="https://www.facebook.com/profile.php?id=61583923357666">Facebook</a><a href="#">Instagram</a></span>
+    </div>
+  </footer>
+
+  <script src="../data/lodging.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/lodging.js"></script>
+</body>
+</html>
