@@ -17,4 +17,3 @@ menu.querySelectorAll("a").forEach((link) =>
  
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
- 
