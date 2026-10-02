@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nature &amp; Wildlife | Magdiwang Tourism Office</title>
+  <meta name="description" content="Mt. Guiting-Guiting, waterfalls, wildlife and coves in Magdiwang, Sibuyan Island, Romblon.">
+  <link rel="icon" type="image/x-icon" href="assets/tourism-logo.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/nature.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__logos" href="../index.html" aria-label="Magdiwang Tourism home">
+      <img src="../assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="../assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+      <h1>MAGDIWANG</h1>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+      <a href="nature.html" aria-current="page">Nature & Wildlife</a>
+      <a href="lodging.html">Where to Stay</a>
+      <a href="foods.html">Where to Eat</a>
+      <a href="nature.html">Tourist Spots</a>
+      <a href="../index.html#activities">Things to Do</a>
+      <a href="activities.html">Festivals & Events</a>
+      <a href="../index.html#events">Culture & Heritage</a>
+      <a href="../index.html#travel-guide">Travel Guide</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="nhero" aria-roledescription="carousel" aria-label="Photos of nature in Magdiwang">
+      <div class="nhero__track" id="slides">
+        <div class="nhero__slide" style="background-image:url('../assets/nature-hero-1.webp')"></div>
+        <div class="nhero__slide" style="background-image:url('../assets/nature-hero-2.webp')"></div>
+        <div class="nhero__slide" style="background-image:url('../assets/nature-hero-3.webp')"></div>
+      </div>
+      <div class="nhero__text">
+        <p class="nhero__eyebrow">Wild by nature</p>
+        <h1>Nature & Wildlife</h1>
+        <p>Forest, falls, and open sea on Magdiwang</p>
+      </div>
+      <div class="nhero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
+    </section>
+
+    <div class="nsub">
+      <div class="wrap nsub__in">
+        <a href="#mountain" class="on">The mountain</a>
+        <a href="#waterfalls">Waterfalls and rivers</a>
+        <a href="#wildlife">Wildlife</a>
+        <a href="#coast">Coast</a>
+        <a class="nsub__map" href="../index.html#map-section">Show on map</a>
+      </div>
+    </div>
+
+    <section class="mtn" id="mountain">
+      <div class="wrap mtn__grid">
+        <div class="mtn__photo" style="background-image:url('../assets/nature-mountain.webp')" role="img" aria-label="Mt. Guiting-Guiting ridge"></div>
+        <div class="mtn__body">
+          <p class="eyebrow">Mount Guiting-Guiting</p>
+          <h2>Above the clouds</h2>
+          <p>[Insert a short description of the mountain, its forests, and what climbers see.]</p>
+          <dl class="facts">
+            <div><dt>Summit</dt><dd>2,058 m</dd></div>
+            <div><dt>Trek days</dt><dd>[__]</dd></div>
+            <div><dt>Difficulty</dt><dd>[__]</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="falls" id="waterfalls">
+      <div class="wrap">
+        <h2>Waterfalls and rivers</h2>
+        <p class="lead">Cool pools and clear water</p>
+        <div class="falls__stage">
+          <button type="button" class="falls__btn falls__btn--prev" id="prev" aria-label="Previous photos">&#8592;</button>
+          <div class="falls__view" id="fview" tabindex="0" aria-label="Waterfall photos, use the arrows to slide">
+            <div class="falls__track" id="ftrack"></div>
+          </div>
+          <button type="button" class="falls__btn falls__btn--next" id="next" aria-label="Next photos">&#8594;</button>
+        </div>
+        <div class="falls__dots" id="fdots" role="group" aria-label="Choose a slide"></div>
+      </div>
+    </section>
+
+    <section class="wild" id="wildlife">
+      <div class="wrap">
+        <h2>Wildlife of Sibuyan</h2>
+        <p class="lead">Species you may meet, and where</p>
+        <div class="wild__grid" id="wgrid"></div>
+      </div>
+    </section>
+
+    <section class="coast" id="coast">
+      <div class="wrap">
+        <h2>Coast and coves</h2>
+        <p class="lead">Quiet shores around the island</p>
+        <div id="clist"></div>
+      </div>
+    </section>
+
+    <section class="care" id="care">
+      <div class="wrap">
+        <h2>Visit with care</h2>
+        <div class="care__grid">
+          <div><h3>Leave no trace</h3><p>[Insert a line about carrying out your trash and staying on trails.]</p></div>
+          <div><h3>Mind the seasons</h3><p>[Insert a line about weather, river levels, and trail closures.]</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="../assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone:</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="nature.html">Mt. Guiting-Guiting</a>
+        <a href="nature.html">Nature</a>
+        <a href="foods.html">Foods</a>
+        <a href="lodging.html">Lodging</a>
+        <a href="../index.html#activities">Activities</a>
+        <a href="../index.html#events">Events</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="../index.html#about">About</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="https://www.facebook.com/profile.php?id=61583923357666">Facebook</a><a href="#">Instagram</a></span>
+    </div>
+  </footer>
+
+  <script src="../data/nature.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/nature.js"></script>
+</body>
+</html>

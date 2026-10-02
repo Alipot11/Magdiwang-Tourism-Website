@@ -2,10 +2,11 @@
 .nav__links a[aria-current="page"] { opacity: 1; border-bottom: 2px solid #fff; padding-bottom: 2px; }
 
 /* Sliding hero */
-.lhero { position: relative; min-height: 70vh; overflow: hidden; color: #fff; display: grid; align-items: end; background: var(--navy); }
+.lhero { position: relative; min-height: 78vh; overflow: hidden; color: #fff; display: grid; align-items: end; background: var(--navy); }
 .lhero__track { position: absolute; inset: 0; display: flex; transition: transform .8s ease; }
 .lhero__slide { flex: 0 0 100%; background-size: cover; background-position: center; }
 .lhero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(15,23,42,.75), rgba(15,23,42,.2) 60%); }
+.lhero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
 .lhero__text { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 72px; }
 .lhero__text h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 600; }
 .lhero__text p { margin-top: 8px; font-size: 1.05rem; opacity: .92; }
