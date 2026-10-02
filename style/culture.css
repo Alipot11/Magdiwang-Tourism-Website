@@ -1,0 +1,99 @@
+/* Culture & Heritage page: builds on index.css (nav, footer, variables) */
+.nav__links a[aria-current="page"] { opacity: 1; border-bottom: 2px solid #fff; padding-bottom: 2px; }
+h2 { font-size: 2.4rem; font-weight: 700; }
+h3 { font-weight: 600; }
+.lead { color: var(--muted); margin: 6px 0 32px; }
+section[id] { scroll-margin-top: 130px; }
+
+/* Sliding hero, no buttons */
+.chero { position: relative; min-height: 78vh; overflow: hidden; color: #fff; display: grid; align-items: end; background: var(--navy); }
+.chero__track { position: absolute; inset: 0; display: flex; transition: transform .8s ease; }
+.chero__slide { flex: 0 0 100%; background-size: cover; background-position: center; }
+.chero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(15,23,42,.8), rgba(15,23,42,.25) 65%); }
+.chero__text { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 80px; }
+.chero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
+.chero__text h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 600; margin-top: 6px; line-height: 1.05; }
+.chero__text p:last-child { margin-top: 10px; font-size: 1.1rem; opacity: .92; }
+.chero__dots { position: absolute; z-index: 3; left: 0; right: 0; bottom: 24px; display: flex; justify-content: center; gap: 10px; }
+.chero__dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1.5px solid #fff; background: transparent; cursor: pointer; }
+.chero__dots button[aria-current="true"] { background: #fff; }
+
+/* Anchor bar */
+.csub { position: sticky; top: 72px; z-index: 40; background: #fff; border-bottom: 1px solid #dde4ee; }
+.csub__in { display: flex; gap: 36px; align-items: center; overflow-x: auto; }
+.csub__in a { padding: 20px 0; font-size: .95rem; color: var(--muted); border-bottom: 2px solid transparent; white-space: nowrap; }
+.csub__in a.on { color: var(--text); border-bottom-color: var(--navy); font-weight: 500; }
+.csub__map { margin-left: auto; color: var(--text) !important; font-weight: 500; }
+.csub__map:hover { text-decoration: underline; }
+
+/* Our story */
+.story { padding: 88px 0; }
+.story__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center; }
+.story__lede { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 600; line-height: 1.25; }
+.story__body { color: var(--muted); margin-top: 20px; max-width: 520px; font-size: 1.05rem; line-height: 1.7; }
+.story__photo { height: 560px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+
+/* Heritage sites: scroll-swap */
+.sites { background: var(--bg-soft); padding: 80px 0 40px; }
+.sites__grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: start; }
+.sites__stage { position: sticky; top: 150px; height: calc(100vh - 190px); min-height: 420px; max-height: 640px; border-radius: 4px; overflow: hidden; background: #dde4ee; }
+.sites__layer { position: absolute; inset: 0; background: #dde4ee center / cover no-repeat; opacity: 0; transition: opacity .6s ease; }
+.sites__layer.on { opacity: 1; }
+.sites__caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 20px 18px; color: #fff; font-weight: 500; background: linear-gradient(to top, rgba(15,23,42,.8), transparent); }
+.sites__item { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; opacity: .35; transition: opacity .4s ease; padding: 24px 0; }
+.sites__item.on { opacity: 1; }
+.sites__inline { display: none; }
+.sites__meta { color: var(--muted); font-weight: 500; }
+.sites__name { font-size: 2rem; margin: 6px 0 14px; line-height: 1.15; }
+.sites__desc { color: var(--muted); line-height: 1.7; max-width: 440px; }
+.sites__empty { padding: 40px 0; color: var(--muted); }
+
+/* Traditions: full-width photo bands, text panel overlaps */
+.trad { padding: 88px 0 24px; }
+.trad__row { position: relative; margin-bottom: 96px; }
+.trad__photo { height: 460px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+.trad__panel { position: absolute; left: 40px; bottom: -48px; width: min(460px, 48%); background: #fff; padding: 28px; border-radius: 4px; box-shadow: 0 10px 28px rgba(15,23,42,.18); }
+.trad__row:nth-child(even) .trad__panel { left: auto; right: 40px; }
+.trad__meta { color: var(--muted); font-weight: 500; font-size: .9rem; }
+.trad__name { font-size: 1.7rem; margin: 4px 0 10px; line-height: 1.15; }
+.trad__desc { color: var(--muted); line-height: 1.65; }
+.trad__empty { padding: 40px 0; color: var(--muted); }
+
+/* Crafts and language */
+.crafts { background: var(--bg-soft); padding: 80px 0 88px; }
+.crafts__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.craft__photo { height: 420px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+.craft__tag { display: inline-block; margin-top: 16px; padding: 2px 12px; border: 1px solid #cbd5e1; border-radius: 999px; font-size: .78rem; color: var(--muted); }
+.craft__name { font-size: 1.6rem; margin-top: 8px; }
+.craft__desc { color: var(--muted); margin-top: 6px; max-width: 520px; line-height: 1.65; }
+
+/* Visit with respect */
+.respect { padding: 72px 0 88px; }
+.respect h2 { margin-bottom: 28px; }
+.respect__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+.respect__grid > div { border-top: 2px solid var(--navy); padding-top: 16px; }
+.respect__grid p { color: var(--muted); margin-top: 6px; max-width: 460px; }
+
+@media (max-width: 900px) {
+  .story__grid { grid-template-columns: 1fr; gap: 32px; }
+  .story__photo { height: 380px; }
+  .sites__grid { grid-template-columns: 1fr; }
+  .sites__stage { display: none; }
+  .sites__item { min-height: 0; opacity: 1; padding: 0 0 48px; }
+  .sites__inline { display: block; height: 260px; margin-bottom: 18px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+  .trad__photo { height: 300px; }
+  .trad__panel, .trad__row:nth-child(even) .trad__panel { position: relative; left: auto; right: auto; bottom: auto; width: auto; margin: -40px 16px 0; }
+  .trad__row { margin-bottom: 48px; }
+  .crafts__grid { grid-template-columns: 1fr; }
+  .craft__photo { height: 300px; }
+}
+@media (max-width: 720px) {
+  .chero { min-height: 64vh; }
+  .csub__in { gap: 24px; }
+  .respect__grid { grid-template-columns: 1fr; }
+  .story, .trad, .crafts { padding-top: 56px; }
+  h2 { font-size: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chero__track, .sites__layer, .sites__item { transition: none; }
+}
