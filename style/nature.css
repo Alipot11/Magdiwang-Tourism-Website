@@ -96,7 +96,6 @@ h3 { font-weight: 600; }
   .nsub__in { gap: 24px; }
   .falls__slide { grid-template-columns: 1fr; }
   .falls__tile { height: 260px; }
-  .wild__tips, .care__grid { grid-template-columns: 1fr; }
   .facts { flex-direction: column; }
   h2 { font-size: 2rem; }
 }

@@ -4,7 +4,7 @@
   if (!track || !dotBox) return;
   const hero = track.parentElement;
   const count = track.children.length;
-  const DELAY = 5000;
+  const DELAY = 3000;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   let index = 0, timer = null;
 
