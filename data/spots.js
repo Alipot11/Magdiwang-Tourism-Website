@@ -18,9 +18,9 @@ window.BARANGAYS = [
 // category must be one of: Nature, Foods, Lodging, Activities, Events
 // image: put the photo in assets/ (optional, a plain card shows if missing)
 window.SPOTS = [
-  { id: "s1", name: "[Sample] Waterfall",  barangay: "poblacion", category: "Nature",     lat: 12.4990, lng: 122.5050, desc: "[Insert description]", image: "assets/spots/spot-1.webp" },
-  { id: "s2", name: "[Sample] Beach Cove", barangay: "poblacion", category: "Activities", lat: 12.4950, lng: 122.5180, desc: "[Insert description]", image: "assets/spots/spot-2.webp" },
-  { id: "s3", name: "[Sample] Local Eatery", barangay: "tampayan", category: "Foods",     lat: 12.4880, lng: 122.5300, desc: "[Insert description]", image: "assets/spots/spot-3.webp" },
-  { id: "s4", name: "[Sample] Island Lodge", barangay: "agutay",   category: "Lodging",   lat: 12.4680, lng: 122.4450, desc: "[Insert description]", image: "assets/spots/spot-4.webp" },
-  { id: "s5", name: "[Sample] Fiesta Grounds", barangay: "silum",  category: "Events",    lat: 12.4930, lng: 122.5900, desc: "[Insert description]", image: "assets/spots/spot-5.webp" }
+  { id: "s1", name: "Agsao Shore",  barangay: "agsao", category: "Nature",     lat: 12.47751406044366, lng: 122.45263621595583, desc: "Rocky shores of Agsao with view of Romblon", image: "assets/spots/agsao/agsao-beach.webp" },
+  { id: "s2", name: "Pinamang - An Br.", barangay: "agsao", category: "Nature", lat: 12.477555679184237, lng: 122.45335516647674, desc: "View of sunset from Pinamang-an bridge", image: "assets/spots/agsao/agsao-sunset.webp" },
+  { id: "s3", name: "Agutay Port", barangay: "agutay", category: "Nature",     lat: 12.463863485576297, lng: 122.43919184120966, desc: "Sunset from Agutay Port", image: "assets/spots/agutay/agutay-port.webp" },
+  { id: "s4", name: "Puntod", barangay: "agutay",   category: "Nature",   lat: 12.458648377180058, lng: 122.44084283793234, desc: "A hill at the center of brgy. Agutay", image: "assets/spots/agutay/puntod.webp" },
+  { id: "s5", name: "Molobago Shore", barangay: "agutay",  category: "Nature",    lat: 12.464757773629692, lng: 122.44394225903105, desc: "Shores of Agutay", image: "assets/spots/agutay/agutay-shore.webp" }
 ];

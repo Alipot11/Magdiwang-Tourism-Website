@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Where to Stay | Magdiwang Tourism Office</title>
-  <meta name="description" content="Resorts, inns, and homestays in Magdiwang, Sibuyan Island, Romblon.">
+  <title>Explore Magdiwang | Magdiwang Tourism Office</title>
+  <meta name="description" content="Nature, places to stay and eat, things to do, festivals and culture in Magdiwang, Sibuyan Island, Romblon.">
   <link rel="icon" type="image/x-icon" href="../assets/tourism-logo.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style/index.css">
-  <link rel="stylesheet" href="../style/lodging.css">
+  <link rel="stylesheet" href="../style/explore.css">
 </head>
 <body>
 
@@ -22,9 +22,9 @@
     </a>
     <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <nav class="nav__links" id="menu">
-      <a href="explore.html">Explore</a>
+      <a href="explore.html" aria-current="page">Explore</a>
       <a href="nature.html">Nature & Wildlife</a>
-      <a href="lodging.html" aria-current="page">Where to Stay</a>
+      <a href="lodging.html">Where to Stay</a>
       <a href="foods.html">Where to Eat</a>
       <a href="activities.html">Things to Do</a>
       <a href="events.html">Festivals & Events</a>
@@ -33,34 +33,25 @@
   </header>
 
   <main>
-    <section class="lhero" aria-roledescription="carousel" aria-label="Photos of places to stay in Magdiwang">
-      <div class="lhero__track" id="slides">
-        <div class="lhero__slide" style="background-image:url('../assets/lodging-hero-1.webp')"></div>
-        <div class="lhero__slide" style="background-image:url('../assets/lodging-hero-2.webp')"></div>
-        <div class="lhero__slide" style="background-image:url('../assets/lodging-hero-3.webp')"></div>
+    <section class="xhero" aria-roledescription="carousel" aria-label="Photos of Magdiwang">
+      <div class="xhero__track" id="slides">
+        <div class="xhero__slide" style="background-image:url('../assets/explore-hero-1.webp')"></div>
+        <div class="xhero__slide" style="background-image:url('../assets/explore-hero-2.webp')"></div>
+        <div class="xhero__slide" style="background-image:url('../assets/explore-hero-3.webp')"></div>
       </div>
-      <div class="lhero__text">
-       <p class="lhero__eyebrow">STAY IN MAGDIWANG</p>
-        <h1>Where to stay</h1>
-        <p>Resorts, inns, and homestays across the island</p>
+      <div class="xhero__text">
+        <p class="xhero__eyebrow">Discover more</p>
+        <h1>Explore Magdiwang</h1>
+        <p>Forest, falls, and open sea, one island and six ways in</p>
       </div>
-      <div class="lhero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
+      <div class="xhero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
     </section>
 
-    <section class="lodging">
-      <div class="wrap">
-        <div class="lodging__bar">
-          <div class="lodging__tabs" id="tabs" role="group" aria-label="Filter by type">
-            <button type="button" class="on" data-type="All">All</button>
-            <button type="button" data-type="Resort">Resorts</button>
-            <button type="button" data-type="Inn">Inns</button>
-            <button type="button" data-type="Homestay">Homestays</button>
-          </div>
-          <a class="lodging__map" href="../index.html#map-section">Show on map</a>
-        </div>
-        <div class="lodging__list" id="list" aria-live="polite"></div>
-      </div>
-    </section>
+    <div class="xsub">
+      <div class="wrap xsub__in" id="subnav"></div>
+    </div>
+
+    <div id="xlist"></div>
   </main>
 
   <footer class="footer" id="contact">
@@ -76,12 +67,12 @@
       </div>
       <div class="footer__col">
         <h4>DISCOVER</h4>
-        <a href="../index.html#tourist-spot">Mt. Guiting-Guiting</a>
-        <a href="../index.html#nature">Nature</a>
-        <a href="../index.html#foods">Foods</a>
+        <a href="nature.html">Mt. Guiting-Guiting</a>
+        <a href="nature.html">Nature</a>
+        <a href="foods.html">Foods</a>
         <a href="lodging.html">Lodging</a>
-        <a href="../index.html#activities">Activities</a>
-        <a href="../index.html#events">Events</a>
+        <a href="activities.html">Activities</a>
+        <a href="events.html">Events</a>
       </div>
       <div class="footer__col">
         <h4>MAGDIWANG</h4>
@@ -94,8 +85,8 @@
     </div>
   </footer>
 
-  <script src="../data/lodging.js"></script>
+  <script src="../data/explore.js"></script>
   <script src="../js/main.js"></script>
-  <script src="../js/lodging.js"></script>
+  <script src="../js/explore.js"></script>
 </body>
 </html>
