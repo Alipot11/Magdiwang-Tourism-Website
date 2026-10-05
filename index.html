@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Discover More Magdiwang | Magdiwang Tourism Office</title>
   <meta name="description" content="Explore Magdiwang, Sibuyan Island, Romblon: Mt. Guiting-Guiting, waterfalls, food, lodging, activities and events.">
+  <meta name="theme-color" content="#0f172a">
   <link rel="icon" type="image/x-icon" href="assets/tourism-logo.ico">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -33,15 +35,22 @@
   </header>
  
   <main id="top">
-    <section class="hero">
+    <section class="hero" aria-roledescription="carousel" aria-label="Photos of Magdiwang">
+      <div class="hero__track" id="slides">
+        <div class="hero__slide" style="background-image:url('assets/homepage/hero.webp')"></div>
+        <div class="hero__slide" style="background-image:url('assets/homepage/hero-2.webp')"></div>
+        <div class="hero__slide" style="background-image:url('assets/homepage/hero-3.webp')"></div>
+        <div class="hero__slide" style="background-image:url('assets/homepage/hero-4.webp')"></div>
+      </div>
       <div class="hero__text">
         <h1><span class="hero__light">DISCOVER MORE</span><span class="hero__brand">MAGDIWANG</span></h1>
         <p>Magdiwang, a quiet town on Sibuyan Island, where forest, falls, and open sea are all within reach</p>
         <div class="hero__btns">
-          <a class="btn btn--outline" href="html/explore.html">Explore Magdiwang</a>
-          <a class="btn btn--outline" href="#">Plan Your Visit</a>
+          <a class="btn btn--outline" href="#discover">Explore Magdiwang</a>
+          <a class="btn btn--outline" href="#travel-guide">Plan Your Visit</a>
         </div>
       </div>
+      <div class="hero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
     </section>
  
     <section class="discover" id="discover">
@@ -51,7 +60,7 @@
  
         <div class="cards">
           <a class="card" href="html/nature.html" id="tourist-spot">
-            <img src="assets/card-1.webp" alt="Mt. Guiting-Guiting summit sign" loading="lazy">
+            <img src="assets/homepage/card-1.webp" alt="Mt. Guiting-Guiting summit sign" loading="lazy">
             <span class="pill">Discover</span>
             <div class="card__body">
               <div class="meta"><span>Mt. Guiting-Guiting</span><span>2,058m</span></div>
@@ -60,7 +69,7 @@
             </div>
           </a>
           <a class="card" href="html/events.html">
-            <img src="assets/card-2.webp" alt="Waterfall and limestone cliffs" loading="lazy">
+            <img src="assets/homepage/card-2.webp" alt="Festivals and Events" loading="lazy">
             <span class="pill">Discover</span>
             <div class="card__body">
               <div class="meta"><span>MAGDIWANG</span></div>
@@ -69,7 +78,7 @@
             </div>
           </a>
           <a class="card" href="html/foods.html" id="foods">
-            <img src="assets/card-3.webp" alt="Local dish" loading="lazy">
+            <img src="assets/homepage/card-3.webp" alt="Local dish" loading="lazy">
             <span class="pill">Discover</span>
             <div class="card__body">
               <div class="meta"><span>MAGDIWANG</span></div>
@@ -78,7 +87,7 @@
             </div>
           </a>
           <a class="card" href="html/lodging.html" id="lodging">
-            <img src="assets/card-4.webp" alt="Island lodge" loading="lazy">
+            <img src="assets/homepage/card-4.webp" alt="Island lodge" loading="lazy">
             <span class="pill">Discover</span>
             <div class="card__body">
               <div class="meta"><span>MAGDIWANG</span></div>
@@ -87,7 +96,7 @@
             </div>
           </a>
           <a class="card" href="html/activities.html" id="activities">
-            <img src="assets/card-5.webp" alt="Kayaking on the water" loading="lazy">
+            <img src="assets/homepage/card-5.webp" alt="Kayaking on the water" loading="lazy">
             <span class="pill">Discover</span>
             <div class="card__body">
               <div class="meta"><span>MAGDIWANG</span></div>
@@ -96,7 +105,7 @@
             </div>
           </a>
           <a class="card" href="html/culture.html" id="events">
-            <img src="assets/card-6.webp" alt="Church lit up at night" loading="lazy">
+            <img src="assets/homepage/card-6.webp" alt="Church lit up at night" loading="lazy">
             <span class="pill">Discover</span>
             <div class="card__body">
               <div class="meta"><span>MAGDIWANG</span></div>
@@ -223,6 +232,7 @@
   </footer>
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="js/home.js"></script>
   <script src="data/spots.js"></script>
   <script src="js/main.js"></script>
   <script src="js/map.js"></script>
