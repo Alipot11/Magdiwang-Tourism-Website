@@ -4,15 +4,15 @@
 window.BARANGAYS = [
   // All 9 barangays of Magdiwang. Coordinates are approximate center points
   // (from Philatlas), not boundaries. Adjust any pin that looks off on the map.
-  { id: "agsao",     name: "Agsao",     lat: 12.4795, lng: 122.4524 },
-  { id: "agutay",    name: "Agutay",    lat: 12.4642, lng: 122.4400 },
-  { id: "ambulong",  name: "Ambulong",  lat: 12.4941, lng: 122.4902 },
-  { id: "dulangan",  name: "Dulangan",  lat: 12.4779, lng: 122.4928 },
-  { id: "ipil",      name: "Ipil",      lat: 12.4860, lng: 122.4691 },
+  { id: "agsao",     name: "Agsao",     lat: 12.46793184099839, lng: 122.4662231752916 },
+  { id: "agutay",    name: "Agutay",    lat: 12.460185153327297, lng: 122.44926260943434 },
+  { id: "ambulong",  name: "Ambulong",  lat: 12.489127131554124, lng: 122.49469806599951 },
+  { id: "dulangan",  name: "Dulangan",  lat: 12.464697400751211, lng: 122.48918679934214, },
+  { id: "ipil",      name: "Ipil",      lat: 12.476263560678378, lng: 122.47757484382873 },
   { id: "jao-asan",  name: "Jao-asan",  lat: 12.4751, lng: 122.5207 },
-  { id: "poblacion", name: "Poblacion", lat: 12.4929, lng: 122.5114 },
+  { id: "poblacion", name: "Poblacion", lat: 12.492018204430613, lng: 122.51229335735549 },
   { id: "silum",     name: "Silum",     lat: 12.4908, lng: 122.5934 },
-  { id: "tampayan",  name: "Tampayan",  lat: 12.4906, lng: 122.5266 }
+  { id: "tampayan",  name: "Tampayan",  lat: 12.491715716219034, lng: 122.53159564511823 }
 ];
 
 // category must be one of: Nature, Foods, Lodging, Activities, Events
