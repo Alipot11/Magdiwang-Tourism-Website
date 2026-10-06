@@ -70,3 +70,80 @@ if ("serviceWorker" in navigator && document.currentScript) {
   mark();
   document.body.appendChild(nav);
 })();
+
+// ===== Install prompt (phones only) =====
+// Android/Chrome: shows an "Install" button that opens the real install dialog.
+// iPhone/iPad: Apple has no install button, so it shows "Share > Add to Home Screen".
+// Hidden when the app is already installed, and after "x" it stays away for 14 days.
+(function () {
+  const KEY = "installPromptDismissed";
+  const DAYS = 14;
+  const DELAY = 4000; // ms before the banner appears
+
+  const installed = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+  if (installed) return;
+
+  function dismissedRecently() {
+    try {
+      const t = Number(localStorage.getItem(KEY));
+      return t && Date.now() - t < DAYS * 24 * 60 * 60 * 1000;
+    } catch (e) { return false; }
+  }
+  if (dismissedRecently()) return;
+
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  let deferred = null, bar = null;
+
+  function hide(remember) {
+    if (bar) { bar.remove(); bar = null; }
+    if (remember) { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} }
+  }
+
+  function show(text, withButton) {
+    if (bar || !window.matchMedia("(max-width: 720px)").matches) return;
+    bar = document.createElement("div");
+    bar.className = "install";
+    bar.setAttribute("role", "dialog");
+    bar.setAttribute("aria-label", "Install the Magdiwang app");
+
+    const msg = document.createElement("p");
+    msg.textContent = text;
+    bar.appendChild(msg);
+
+    if (withButton) {
+      const go = document.createElement("button");
+      go.type = "button";
+      go.className = "install__go";
+      go.textContent = "Install";
+      go.addEventListener("click", () => {
+        if (!deferred) return;
+        deferred.prompt();
+        deferred.userChoice.then(() => { deferred = null; hide(true); });
+      });
+      bar.appendChild(go);
+    }
+
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "install__x";
+    close.setAttribute("aria-label", "Dismiss");
+    close.textContent = "\u00D7";
+    close.addEventListener("click", () => hide(true));
+    bar.appendChild(close);
+
+    document.body.appendChild(bar);
+  }
+
+  // Android / Chrome
+  window.addEventListener("beforeinstallprompt", e => {
+    e.preventDefault();
+    deferred = e;
+    setTimeout(() => show("Add Magdiwang to your home screen to use it offline.", true), DELAY);
+  });
+  window.addEventListener("appinstalled", () => hide(false));
+
+  // iPhone / iPad
+  if (isIOS) {
+    setTimeout(() => show("Install this app: tap Share, then Add to Home Screen.", false), DELAY);
+  }
+})();
