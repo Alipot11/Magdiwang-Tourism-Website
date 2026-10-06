@@ -1,7 +1,7 @@
 // Magdiwang Tourism service worker. Keep this file in the project ROOT
 // so it covers index.html, html/*, assets/*, etc.
 // When you change code or data, bump VERSION so visitors get the update.
-const VERSION = "v2";
+const VERSION = "v4";
 const CORE = "magdiwang-core-" + VERSION;
 const TILES = "magdiwang-tiles";
 const MAX_TILES = 400;
@@ -31,6 +31,7 @@ const PRECACHE = [
   "style/events.css",
   "style/culture.css",
   "js/main.js",
+  "js/home.js",
   "js/map.js",
   "js/explore.js",
   "js/nature.js",
@@ -50,15 +51,18 @@ const PRECACHE = [
   "assets/tourism-logo.png",
   "assets/tourism-logo.ico",
   "assets/Magdiwang-seal.png",
-  "assets/hero.webp",
-  "assets/about.webp",
-  "assets/cta.webp",
-  "assets/card-1.webp",
-  "assets/card-2.webp",
-  "assets/card-3.webp",
-  "assets/card-4.webp",
-  "assets/card-5.webp",
-  "assets/card-6.webp",
+  "assets/homepage/hero.webp",
+  "assets/homepage/hero-2.webp",
+  "assets/homepage/hero-3.webp",
+  "assets/homepage/hero-4.webp",
+  "assets/homepage/about.webp",
+  "assets/homepage/cta.webp",
+  "assets/homepage/card-1.webp",
+  "assets/homepage/card-2.webp",
+  "assets/homepage/card-3.webp",
+  "assets/homepage/card-4.webp",
+  "assets/homepage/card-5.webp",
+  "assets/homepage/card-6.webp",
   "assets/icon-192.png",
   "assets/icon-512.png",
   // External libraries and fonts the pages depend on
@@ -100,6 +104,14 @@ function cacheable(res) {
   return res && (res.ok || res.type === "opaque");
 }
 
+// Save a copy of a response. The clone is made right away, before the
+// browser starts reading the response.
+function save(cacheName, req, res) {
+  if (!cacheable(res)) return;
+  const copy = res.clone();
+  caches.open(cacheName).then(c => c.put(req, copy)).catch(() => {});
+}
+
 self.addEventListener("fetch", event => {
   const req = event.request;
   if (req.method !== "GET") return;
@@ -125,7 +137,7 @@ self.addEventListener("fetch", event => {
   if (req.mode === "navigate") {
     event.respondWith(
       fetch(req).then(res => {
-        if (cacheable(res)) caches.open(CORE).then(c => c.put(req, res.clone()));
+        save(CORE, req, res);
         return res;
       }).catch(() =>
         caches.match(req, { ignoreSearch: true })
@@ -135,12 +147,24 @@ self.addEventListener("fetch", event => {
     return;
   }
 
-  // Everything else (CSS, JS, data, images, fonts, Leaflet):
-  // serve from cache instantly, refresh it in the background.
+  // Your own code and data (js, css, data/*.js): network first so edits show
+  // up right away. The cache is only the offline fallback.
+  if (url.origin === self.location.origin && /\.(js|css|webmanifest)$/.test(url.pathname)) {
+    event.respondWith(
+      fetch(req).then(res => {
+        save(CORE, req, res);
+        return res;
+      }).catch(() => caches.match(req))
+    );
+    return;
+  }
+
+  // Everything else (images, fonts, Leaflet): serve from cache instantly,
+  // refresh it in the background. New images are fetched and saved on first view.
   event.respondWith(
     caches.match(req).then(hit => {
       const fresh = fetch(req).then(res => {
-        if (cacheable(res)) caches.open(CORE).then(c => c.put(req, res.clone()));
+        save(CORE, req, res);
         return res;
       }).catch(() => hit);
       return hit || fresh;
