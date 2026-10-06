@@ -10,13 +10,13 @@ window.HIKING = {
 };
 
 window.KAYAKING = {
-  title: "[Sample] Kayaking spot",
+  title: "Sanctuary Garden Resort",
   barangay: "Tampayan",
   desc: "[Insert one or two sentences about the paddle and what you will see.]",
   launch: "[Where to launch]",
   bestTime: "[Best time of day or year]",
   duration: "[About how long]",
-  images: ["assets/kayak-1.webp", "assets/kayak-2.webp", "assets/kayak-3.webp"] // 1st is the large photo
+  images: ["assets/activities/kayaking.webp", "assets/activities/kayaking-2.webp", "assets/activities/kayaking-3.webp"] // 1st is the large photo
 };
 
 window.SWIMMING = {

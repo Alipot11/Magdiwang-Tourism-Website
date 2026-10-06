@@ -52,7 +52,7 @@
     shown.forEach(l => {
       const a = document.createElement("a");
       a.className = "lodging__row";
-      a.href = "lodging-detail.html?id=" + encodeURIComponent(l.id);
+      a.href = l.page || "coming-soon.html"; // + encodeURIComponent(l.id); --> add if there is a content page made
 
       const photo = document.createElement("div");
       photo.className = "lodging__photo";
