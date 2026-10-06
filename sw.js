@@ -1,7 +1,7 @@
 // Magdiwang Tourism service worker. Keep this file in the project ROOT
 // so it covers index.html, html/*, assets/*, etc.
 // When you change code or data, bump VERSION so visitors get the update.
-const VERSION = "v1";
+const VERSION = "v2";
 const CORE = "magdiwang-core-" + VERSION;
 const TILES = "magdiwang-tiles";
 const MAX_TILES = 400;
