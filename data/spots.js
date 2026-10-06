@@ -22,5 +22,7 @@ window.SPOTS = [
   { id: "s2", name: "Pinamang - An Br.", barangay: "agsao", category: "Nature", lat: 12.477555679184237, lng: 122.45335516647674, desc: "View of sunset from Pinamang-an bridge", image: "assets/spots/agsao/agsao-sunset.webp" },
   { id: "s3", name: "Agutay Port", barangay: "agutay", category: "Nature",     lat: 12.463863485576297, lng: 122.43919184120966, desc: "Sunset from Agutay Port", image: "assets/spots/agutay/agutay-port.webp" },
   { id: "s4", name: "Puntod", barangay: "agutay",   category: "Nature",   lat: 12.458648377180058, lng: 122.44084283793234, desc: "A hill at the center of brgy. Agutay", image: "assets/spots/agutay/puntod.webp" },
-  { id: "s5", name: "Molobago Shore", barangay: "agutay",  category: "Nature",    lat: 12.464757773629692, lng: 122.44394225903105, desc: "Shores of Agutay", image: "assets/spots/agutay/agutay-shore.webp" }
+  { id: "s5", name: "Molobago Shore", barangay: "agutay",  category: "Nature",    lat: 12.464757773629692, lng: 122.44394225903105, desc: "Shores of Agutay", image: "assets/spots/agutay/agutay-shore.webp" },
+  { id: "s5", name: "Nailog River", barangay: "poblacion",  category: "Nature",    lat: 12.488222748581869, lng: 122.52307540373398, desc: "[insert description]", image: "assets/spots/poblacion/nailog-river.webp" }
+
 ];
