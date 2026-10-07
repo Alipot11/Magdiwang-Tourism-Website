@@ -21,7 +21,7 @@ window.KAYAKING = {
 
 window.SWIMMING = {
   intro: "[Insert one line about swimming in Magdiwang.]",
-  safety: "Check the weather and water conditions before you swim, and never swim alone.",
+  safety: "Check the weather and water conditions before you swim, never let children swim alone, and never swim with the influence of alcohol.",
   spots: [
     { name: "[Sample] Swim spot 1", barangay: "Poblacion", type: "Beach", image: "assets/swim-1.webp" },
     { name: "[Sample] Swim spot 2", barangay: "Agutay",    type: "River", image: "assets/swim-2.webp" },

@@ -59,8 +59,10 @@ h3 { font-weight: 600; }
 .wild { padding: 88px 0; }
 .wild__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .sp__photo { aspect-ratio: 4 / 5; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
-.sp__tag { display: inline-block; margin-top: 14px; padding: 2px 12px; border: 1px solid #cbd5e1; border-radius: 999px; font-size: .78rem; color: var(--muted); }
-.sp__name { font-size: 1.25rem; font-weight: 600; margin-top: 6px; }
+.sp__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.sp__tag { display: inline-block; padding: 2px 12px; border: 1px solid #cbd5e1; border-radius: 999px; font-size: .78rem; color: var(--muted); }
+.sp__sci { font-style: italic; }
+.sp__endemic { background: var(--navy); border-color: var(--navy); color: #fff; }
 .sp__note { color: var(--muted); font-size: .92rem; margin-top: 4px; }
 
 /* Coast: alternating rows */
