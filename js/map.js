@@ -2,6 +2,7 @@
   const B = window.BARANGAYS, S = window.SPOTS;
   const CATS = ["All", "Nature", "Foods", "Lodging", "Activities", "Events"];
   let current = null, cat = "All";
+  const markers = {}
 
   const map = L.map("map", { scrollWheelZoom: false });
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -92,12 +93,22 @@
         const pop = el("div", "pop"); pop.append(el("b", "", s.name), el("span", "", s.desc));
         const m = L.circleMarker([s.lat, s.lng], { radius: 9, color: "#0f172a", weight: 3, fillColor: "#f59e0b", fillOpacity: 1 })
           .bindPopup(pop).addTo(spotLayer);
+        markers[s.id] = m;  
         body.appendChild(card(s, m));
       });
     }
     refreshDots();
   }
 
-  buildChips();
-  render();
+ buildChips();
+ render();
+
+ // Open a spot from a link like index.html?spot=s7#map-section //
+ const wanted = new URLSearchParams(location.search).get("spot");
+ const target = S.find(s => s.id === wanted);
+ if (target) {
+  select(target.barangay);
+  map.flyTo([target.lat, target.lng], 15);
+  if (markers[target.id]) markers[target.id].openPopup();
+}
 })();
