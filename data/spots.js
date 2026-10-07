@@ -23,6 +23,8 @@ window.SPOTS = [
   { id: "s3", name: "Agutay Port", barangay: "agutay", category: "Nature",     lat: 12.463863485576297, lng: 122.43919184120966, desc: "Sunset from Agutay Port", image: "assets/spots/agutay/agutay-port.webp" },
   { id: "s4", name: "Puntod", barangay: "agutay",   category: "Nature",   lat: 12.458648377180058, lng: 122.44084283793234, desc: "A hill at the center of brgy. Agutay", image: "assets/spots/agutay/puntod.webp" },
   { id: "s5", name: "Molobago Shore", barangay: "agutay",  category: "Nature",    lat: 12.464757773629692, lng: 122.44394225903105, desc: "Shores of Agutay", image: "assets/spots/agutay/agutay-shore.webp" },
-  { id: "s5", name: "Nailog River", barangay: "poblacion",  category: "Nature",    lat: 12.488222748581869, lng: 122.52307540373398, desc: "[insert description]", image: "assets/spots/poblacion/nailog-river.webp" }
+  { id: "s6", name: "Nailog River", barangay: "poblacion",  category: "Nature",    lat: 12.488222748581869, lng: 122.52307540373398, desc: "[insert description]", image: "assets/spots/poblacion/nailog-river.webp" },
+  { id: "s7", name: "Sanctuary Garden Resort", barangay: "tampayan",  category: "Activities",    lat: 12.490146209549602, lng: 122.53547294598968, desc: "[insert description]", image: "assets/spots/tampayan/kayaking.webp" },
+  { id: "s8", name: "Sanctuary Garden Resort", barangay: "tampayan",  category: "Lodging",    lat: 12.490146209549602, lng: 122.53547294598968, desc: "[insert description]", image: "assets/spots/tampayan/lodging.webp" }
 
 ];

@@ -13,17 +13,18 @@ window.KAYAKING = {
   title: "Sanctuary Garden Resort",
   barangay: "Tampayan",
   desc: "[Insert one or two sentences about the paddle and what you will see.]",
-  launch: "[Where to launch]",
+  launch: "Tampayan Dam",
   bestTime: "[Best time of day or year]",
   duration: "[About how long]",
-  images: ["assets/activities/kayaking.webp", "assets/activities/kayaking-2.webp", "assets/activities/kayaking-3.webp"] // 1st is the large photo
+  images: ["assets/activities/kayaking.webp", "assets/activities/kayaking-2.webp", "assets/activities/kayaking-3.webp"], // 1st is the large photo
+  spot: "s7"
 };
 
 window.SWIMMING = {
   intro: "[Insert one line about swimming in Magdiwang.]",
   safety: "Check the weather and water conditions before you swim, never let children swim alone, and never swim with the influence of alcohol.",
   spots: [
-    { name: "[Sample] Swim spot 1", barangay: "Poblacion", type: "Beach", image: "assets/swim-1.webp" },
+    { name: "Rance's Haven", barangay: "Tampayan", type: "Pool & Resort", image: "assets/activities/swim.webp" },
     { name: "[Sample] Swim spot 2", barangay: "Agutay",    type: "River", image: "assets/swim-2.webp" },
     { name: "[Sample] Swim spot 3", barangay: "Silum",     type: "Falls", image: "assets/swim-3.webp" }
   ]

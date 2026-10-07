@@ -61,6 +61,7 @@
     d.setAttribute("aria-label", (K.title || "Kayaking") + " photo " + (n + 1));
     kp.appendChild(d);
   });
+  if (K.spot) document.querySelector(".kayak__map").href = "../index.html?spot=" + encodeURIComponent(K.spot) + "#map-section";
 
   // ----- Swimming -----
   const S = window.SWIMMING || {};
