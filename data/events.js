@@ -27,7 +27,16 @@ window.MOMENTS = [
 
 // CALENDAR: one line per event, in month order
 window.CALENDAR = [
+  { month: "January",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "February",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "March",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "April",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
   { month: "May",     name: "Kasadyahan Festival",     barangay: "Poblacion" },
-  { month: "[Month]", name: "[Fiesta / harvest event]", barangay: "[Barangay]" },
-  { month: "[Month]", name: "[Event name]",             barangay: "[Barangay]" }
+  { month: "June",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "July",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "August",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "September",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "October",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "November",     name: "[Insert Event Name]",     barangay: "[Barangay]" },
+  { month: "December",     name: "[Insert Event Name]",     barangay: "[Barangay]" }
 ];

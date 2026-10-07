@@ -122,7 +122,11 @@
       photo.setAttribute("role", "img");
       photo.setAttribute("aria-label", w.name);
     }
-    card.append(photo, make("span", "sp__tag", w.tag), make("h3", "sp__name", w.name), make("p", "sp__note", w.note || ""));
+    const tags = make("div", "sp__tags");
+    tags.append(make("span", "sp__tag", w.tag));
+    if (w.endemic) tags.append(make("span", "sp__tag sp__endemic", "Endemic"));
+    if (w.scientific) tags.append(make("span", "sp__tag sp__sci", w.scientific));
+    card.append(photo, tags, make("h3", "sp__name", w.name), make("p", "sp__note", w.note || ""));
     grid.appendChild(card);
   });
 
