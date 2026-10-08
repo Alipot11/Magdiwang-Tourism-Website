@@ -1,0 +1,40 @@
+/* Install page: builds on index.css (nav, footer, variables) */
+h3 { font-weight: 600; }
+
+/* Hero (static, no slider) */
+.ihero { min-height: 46vh; display: grid; align-items: end; color: #fff; background: var(--navy); }
+.ihero__text { max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 64px; }
+.ihero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
+.ihero__text h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 600; margin-top: 6px; line-height: 1.05; }
+.ihero__text p:last-child { margin-top: 10px; font-size: 1.1rem; opacity: .92; }
+
+/* Install cards */
+.inst { background: var(--bg-soft); padding: 72px 0 80px; }
+.inst__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.inst__card, .inst__done { background: #fff; border-radius: var(--radius); padding: 32px; box-shadow: 0 6px 18px rgba(15,23,42,.08); }
+.inst__card h2, .inst__done h2 { font-size: 1.6rem; font-weight: 600; }
+.inst__lead { color: var(--muted); margin-top: 8px; max-width: 460px; }
+.inst__btn { margin-top: 24px; border: 0; border-radius: 999px; padding: 14px 36px; background: var(--navy); color: #fff; font: inherit; font-size: 1rem; font-weight: 500; cursor: pointer; transition: background .2s; }
+.inst__btn:hover { background: #1e293b; }
+.inst__hint { margin-top: 14px; color: var(--muted); font-size: .9rem; min-height: 1.4em; }
+.inst__steps { margin: 20px 0 0 20px; display: grid; gap: 12px; font-size: 1.05rem; }
+.inst__steps li::marker { font-weight: 600; }
+.inst__card.is-hint { outline: 2px solid var(--navy); outline-offset: 4px; }
+.inst__done[hidden], .inst__grid[hidden] { display: none; }
+
+/* Perks */
+.perks { padding: 72px 0 88px; }
+.perks__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.perks__grid > div { border-top: 2px solid var(--navy); padding-top: 16px; }
+.perks__grid p { color: var(--muted); margin-top: 6px; max-width: 320px; }
+
+@media (max-width: 900px) {
+  .inst__grid { grid-template-columns: 1fr; }
+  .perks__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 720px) {
+  .ihero { min-height: 38vh; }
+  .inst { padding: 48px 0 56px; }
+  .inst__card, .inst__done { padding: 24px; }
+  .inst__btn { width: 100%; }
+}

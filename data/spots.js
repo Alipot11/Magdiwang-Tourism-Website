@@ -11,7 +11,7 @@ window.BARANGAYS = [
   { id: "ipil",      name: "Ipil",      lat: 12.476263560678378, lng: 122.47757484382873 },
   { id: "jao-asan",  name: "Jao-asan",  lat: 12.4751, lng: 122.5207 },
   { id: "poblacion", name: "Poblacion", lat: 12.492018204430613, lng: 122.51229335735549 },
-  { id: "silum",     name: "Silum",     lat: 12.4908, lng: 122.5934 },
+  { id: "silum",     name: "Silum",     lat: 12.481328242760222, lng: 122.57133798441079 },
   { id: "tampayan",  name: "Tampayan",  lat: 12.491715716219034, lng: 122.53159564511823 }
 ];
 
@@ -24,7 +24,9 @@ window.SPOTS = [
   { id: "s4", name: "Puntod", barangay: "agutay",   category: "Nature",   lat: 12.458648377180058, lng: 122.44084283793234, desc: "A hill at the center of brgy. Agutay", image: "assets/spots/agutay/puntod.webp" },
   { id: "s5", name: "Molobago Shore", barangay: "agutay",  category: "Nature",    lat: 12.464757773629692, lng: 122.44394225903105, desc: "Shores of Agutay", image: "assets/spots/agutay/agutay-shore.webp" },
   { id: "s6", name: "Nailog River", barangay: "poblacion",  category: "Nature",    lat: 12.488222748581869, lng: 122.52307540373398, desc: "[insert description]", image: "assets/spots/poblacion/nailog-river.webp" },
-  { id: "s7", name: "Sanctuary Garden Resort", barangay: "tampayan",  category: "Activities",    lat: 12.490146209549602, lng: 122.53547294598968, desc: "[insert description]", image: "assets/spots/tampayan/kayaking.webp" },
-  { id: "s8", name: "Sanctuary Garden Resort", barangay: "tampayan",  category: "Lodging",    lat: 12.490146209549602, lng: 122.53547294598968, desc: "[insert description]", image: "assets/spots/tampayan/lodging.webp" }
-
+  { id: "s7", name: "Sanctuary Garden Resort", barangay: "tampayan",  category: "Activities",    lat: 12.490146209549602, lng: 122.53547294598968, desc: "Paddle through the Nailog River", image: "assets/spots/tampayan/kayaking.webp" },
+  { id: "s8", name: "Sanctuary Garden Resort", barangay: "tampayan",  category: "Lodging",    lat: 12.490146209549602, lng: 122.53547294598968, desc: "[insert description]", image: "assets/spots/tampayan/lodging.webp" },
+  { id: "s9", name: "Cataja Falls", barangay: "jao-asan",  category: "Nature",    lat: 12.461586752198, lng: 122.5050080329111, desc: "[insert description]", image: "assets/spots/jao-asan/cataja.webp" },
+  { id: "s10", name: "Dalipi River", barangay: "tampayan",  category: "Nature",    lat: 12.484356299547196, lng: 122.53857329010299, desc: "[insert description]", image: "assets/spots/tampayan/dalipi.webp" },
+  { id: "s11", name: "Lambingan Falls", barangay: "silum",  category: "Nature",    lat: 12.49210365252721, lng: 122.5783351415361, desc: "[insert description]", image: "assets/spots/silum/lambingan.webp" }
 ];

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Get the app | Magdiwang Tourism Office</title>
+  <meta name="description" content="Install the Magdiwang Tourism app on your phone or computer. Free, quick, and works offline.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" type="image/x-icon" href="../assets/tourism-logo.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/install.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__logos" href="../index.html" aria-label="Magdiwang Tourism home">
+      <img src="../assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="../assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+      <h1>MAGDIWANG</h1>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+      <a href="explore.html">Explore</a>
+      <a href="nature.html">Nature & Wildlife</a>
+      <a href="lodging.html">Where to Stay</a>
+      <a href="foods.html">Where to Eat</a>
+      <a href="activities.html">Things to Do</a>
+      <a href="events.html">Festivals & Events</a>
+      <a href="culture.html">Culture & Heritage</a>
+      <a href="install.html">Get the app</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ihero">
+      <div class="ihero__text">
+        <p class="ihero__eyebrow">Take Magdiwang with you</p>
+        <h1>Get the app</h1>
+        <p>Free, quick to install, and works offline</p>
+      </div>
+    </section>
+
+    <section class="inst" id="install">
+      <div class="wrap">
+        <div class="inst__grid" id="inst-cards">
+          <div class="inst__card" id="panel-install">
+            <h2>Android and desktop</h2>
+            <p class="inst__lead">One tap adds Magdiwang Tourism App to your home screen. It opens like an app and keeps working without a signal or internet connection.</p>
+            <button type="button" class="inst__btn" id="install-btn">Install app</button>
+            <p class="inst__hint" id="install-hint" role="status" aria-live="polite">Works in Chrome and Edge.</p>
+          </div>
+          <div class="inst__card" id="ios">
+            <h2>iPhone and iPad</h2>
+            <p class="inst__lead">Apple doesn't allow an install button, so it takes three taps.</p>
+            <ol class="inst__steps">
+              <li>Open this page in Safari.</li>
+              <li>Tap the Share button.</li>
+              <li>Tap Add to Home Screen, then Add.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="inst__done" id="installed" hidden>
+          <h2>You're using the app</h2>
+          <p class="inst__lead">Magdiwang is installed on this device. Nothing more to do.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="perks">
+      <div class="wrap perks__grid">
+        <div><h3>Works offline</h3><p>Pages you've visited stay available when the signal drops. Refresh the app when in coverage of signal or internet connection to load contents.</p></div>
+        <div><h3>Opens like an app</h3><p>Tap the icon on your home screen. No browser needed.</p></div>
+        <div><h3>Always up to date</h3><p>New places and photos appear on their own just refresh the app to see when new updates are released.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="../assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone:</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="nature.html">Nature & Wildlife</a>
+        <a href="lodging.html">Where to Stay</a>
+        <a href="foods.html">Where to eat</a>
+        <a href="activities.html">Things to Do</a>
+        <a href="events.html">Festivals & Events</a>
+        <a href="culture.html">Culture & Heritage</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="../index.html#about">About</a>
+        <a href="install.html">Get the app</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="https://www.facebook.com/profile.php?id=61583923357666">Facebook</a></span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/install.js"></script>
+</body>
+</html>

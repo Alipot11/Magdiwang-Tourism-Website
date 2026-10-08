@@ -71,17 +71,21 @@ if ("serviceWorker" in navigator && document.currentScript) {
   document.body.appendChild(nav);
 })();
 
-// ===== Install prompt (phones only) =====
-// Android/Chrome: shows an "Install" button that opens the real install dialog.
-// iPhone/iPad: Apple has no install button, so it shows "Share > Add to Home Screen".
-// Hidden when the app is already installed, and after "x" it stays away for 14 days.
+// ===== Install alert (phones only) =====
+// Tapping the alert opens html/install.html. After a tap or "x" it stays away for 14 days.
+// It never shows on the install page, or inside the installed app.
 (function () {
+  const src = document.currentScript && document.currentScript.src;
+  if (!src) return;
+  const root = new URL("../", src);                       // project root, from js/main.js
+  const PAGE = new URL("html/install.html", root).href;
   const KEY = "installPromptDismissed";
   const DAYS = 14;
-  const DELAY = 4000; // ms before the banner appears
+  const DELAY = 4000; // ms before the alert appears
 
-  const installed = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
-  if (installed) return;
+  if (location.pathname.endsWith("install.html")) return;
+  if (window.matchMedia("(display-mode: standalone)").matches || navigator.standalone) return;
+  if (!window.matchMedia("(max-width: 720px)").matches) return;
 
   function dismissedRecently() {
     try {
@@ -91,59 +95,43 @@ if ("serviceWorker" in navigator && document.currentScript) {
   }
   if (dismissedRecently()) return;
 
-  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-  let deferred = null, bar = null;
-
-  function hide(remember) {
+  let bar = null;
+  function hide() {
     if (bar) { bar.remove(); bar = null; }
-    if (remember) { try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {} }
+    try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
   }
 
-  function show(text, withButton) {
-    if (bar || !window.matchMedia("(max-width: 720px)").matches) return;
+  function show() {
+    if (bar) return;
     bar = document.createElement("div");
     bar.className = "install";
-    bar.setAttribute("role", "dialog");
-    bar.setAttribute("aria-label", "Install the Magdiwang app");
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", "Install the app");
 
-    const msg = document.createElement("p");
-    msg.textContent = text;
-    bar.appendChild(msg);
-
-    if (withButton) {
-      const go = document.createElement("button");
-      go.type = "button";
-      go.className = "install__go";
-      go.textContent = "Install";
-      go.addEventListener("click", () => {
-        if (!deferred) return;
-        deferred.prompt();
-        deferred.userChoice.then(() => { deferred = null; hide(true); });
-      });
-      bar.appendChild(go);
-    }
+    const link = document.createElement("a");
+    link.className = "install__link";
+    link.href = PAGE;
+    const title = document.createElement("span");
+    title.className = "install__title";
+    title.textContent = "Install the Magdiwang Tourism App";
+    const sub = document.createElement("span");
+    sub.className = "install__sub";
+    sub.textContent = "Tap to see how";
+    link.append(title, sub);
+    link.addEventListener("click", () => {
+      try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+    });
 
     const close = document.createElement("button");
     close.type = "button";
     close.className = "install__x";
     close.setAttribute("aria-label", "Dismiss");
     close.textContent = "\u00D7";
-    close.addEventListener("click", () => hide(true));
-    bar.appendChild(close);
+    close.addEventListener("click", hide);
 
+    bar.append(link, close);
     document.body.appendChild(bar);
   }
 
-  // Android / Chrome
-  window.addEventListener("beforeinstallprompt", e => {
-    e.preventDefault();
-    deferred = e;
-    setTimeout(() => show("Add Magdiwang to your home screen to use it offline.", true), DELAY);
-  });
-  window.addEventListener("appinstalled", () => hide(false));
-
-  // iPhone / iPad
-  if (isIOS) {
-    setTimeout(() => show("Install this app: tap Share, then Add to Home Screen.", false), DELAY);
-  }
+  setTimeout(show, DELAY);
 })();

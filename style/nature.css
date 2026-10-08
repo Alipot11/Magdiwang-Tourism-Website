@@ -14,9 +14,6 @@ h3 { font-weight: 600; }
 .nhero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
 .nhero__text h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 600; margin-top: 6px; line-height: 1.05; }
 .nhero__text p:last-child { margin-top: 10px; font-size: 1.1rem; opacity: .92; }
-.nhero__dots { position: absolute; z-index: 3; left: 0; right: 0; bottom: 24px; display: flex; justify-content: center; gap: 10px; }
-.nhero__dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1.5px solid #fff; background: transparent; cursor: pointer; }
-.nhero__dots button[aria-current="true"] { background: #fff; }
 
 /* Anchor bar */
 .nsub { position: sticky; top: 72px; z-index: 40; background: #fff; border-bottom: 1px solid #dde4ee; }
