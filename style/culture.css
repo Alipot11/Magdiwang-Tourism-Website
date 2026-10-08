@@ -5,18 +5,15 @@ h3 { font-weight: 600; }
 .lead { color: var(--muted); margin: 6px 0 32px; }
 section[id] { scroll-margin-top: 130px; }
 
-/* Sliding hero, no buttons */
+/* Hero */
 .chero { position: relative; min-height: 78vh; overflow: hidden; color: #fff; display: grid; align-items: end; background: var(--navy); }
-.chero__track { position: absolute; inset: 0; display: flex; transition: transform .8s ease; }
+.chero__track { position: absolute; inset: 0; display: flex; }
 .chero__slide { flex: 0 0 100%; background-size: cover; background-position: center; }
 .chero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(15,23,42,.8), rgba(15,23,42,.25) 65%); }
 .chero__text { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 80px; }
 .chero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
 .chero__text h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 600; margin-top: 6px; line-height: 1.05; }
 .chero__text p:last-child { margin-top: 10px; font-size: 1.1rem; opacity: .92; }
-.chero__dots { position: absolute; z-index: 3; left: 0; right: 0; bottom: 24px; display: flex; justify-content: center; gap: 10px; }
-.chero__dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1.5px solid #fff; background: transparent; cursor: pointer; }
-.chero__dots button[aria-current="true"] { background: #fff; }
 
 /* Anchor bar */
 .csub { position: sticky; top: 72px; z-index: 40; background: #fff; border-bottom: 1px solid #dde4ee; }
@@ -94,6 +91,6 @@ section[id] { scroll-margin-top: 130px; }
   .story, .trad, .crafts { padding-top: 56px; }
   h2 { font-size: 2rem; }
 }
-@media (prefers-reduced-motion: reduce) {
+@media (reduce) {
   .chero__track, .sites__layer, .sites__item { transition: none; }
 }

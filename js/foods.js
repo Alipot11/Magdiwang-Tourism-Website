@@ -1,37 +1,4 @@
 (function () {
-  // ----- Sliding hero (automatic, same as lodging) -----
-  const track = document.getElementById("slides");
-  const dotBox = document.getElementById("dots");
-  const hero = track.parentElement;
-  const count = track.children.length;
-  const DELAY = 5000;
-  let index = 0, timer = null;
-  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  const dots = [];
-  for (let i = 0; i < count; i++) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.setAttribute("aria-label", "Photo " + (i + 1));
-    b.addEventListener("click", () => { go(i); restart(); });
-    dotBox.appendChild(b);
-    dots.push(b);
-  }
-  function go(i) {
-    index = (i + count) % count;
-    track.style.transform = "translateX(-" + index * 100 + "%)";
-    dots.forEach((d, n) => d.setAttribute("aria-current", String(n === index)));
-  }
-  function start() { stop(); timer = setInterval(() => go(index + 1), DELAY); }
-  function stop() { if (timer) clearInterval(timer); timer = null; }
-  function restart() { if (!reduce.matches) start(); }
-  go(0);
-  if (!reduce.matches) start();
-  hero.addEventListener("mouseenter", stop);
-  hero.addEventListener("mouseleave", restart);
-  hero.addEventListener("focusin", stop);
-  hero.addEventListener("focusout", restart);
-
   // ----- Local dishes slider (manual only: arrows, dots, swipe, keyboard) -----
   const PER_SLIDE = 5;
   const dTrack = document.getElementById("dtrack");

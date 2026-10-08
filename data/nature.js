@@ -4,7 +4,7 @@
 // WATERFALLS: each group of 3 makes one slide. "name" shows as the caption on the photo.
 window.FALLS = [
   { name: "Cataja Falls", image: "assets/nature/cataja.webp" }, { name: "Nailog River", image: "assets/nature/river.webp" }, { name: "Dalipi River", image: "assets/nature/river-2.webp" },
-  { name: "[insert falls name]", image: "assets/nature/falls-2.webp" }, { name: "Lambingan Falls", image: "assets/nature/falls-4.webp" },{ name: "Luy-a Luy-a Falls", image: "assets/nature/falls-3.webp" }
+  { name: "Luy-a Luy-a Falls", image: "assets/nature/falls-2.webp" }, { name: "Lambingan Falls", image: "assets/nature/falls-4.webp" },{ name: "Dam", image: "assets/nature/river-3.webp" }
 ];
 
 // WILDLIFE: tag is a short label such as Endemic, Bird, Mammal, Plant. image example "assets/wildlife-1.webp"

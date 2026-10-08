@@ -3,7 +3,7 @@
 h2 { font-size: 2.4rem; font-weight: 700; }
 section[id] { scroll-margin-top: 130px; }
 
-/* Sliding hero */
+/* Hero */
 .lhero { position: relative; min-height: 78vh; overflow: hidden; color: #fff; display: grid; align-items: end; background: var(--navy); }
 .lhero__track { position: absolute; inset: 0; display: flex; transition: transform .8s ease; }
 .lhero__slide { flex: 0 0 100%; background-size: cover; background-position: center; }
@@ -12,9 +12,6 @@ section[id] { scroll-margin-top: 130px; }
 .lhero__text { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 72px; }
 .lhero__text h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 600; margin-top: 6px; line-height: 1.05; }
 .lhero__text p:last-child { margin-top: 10px; font-size: 1.1rem; opacity: .92; }
-.lhero__dots { position: absolute; z-index: 3; left: 0; right: 0; bottom: 24px; display: flex; justify-content: center; gap: 10px; }
-.lhero__dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1.5px solid #fff; background: transparent; cursor: pointer; }
-.lhero__dots button[aria-current="true"] { background: #fff; }
 
 /* Filters */
 .lodging { padding: 0 0 80px; }

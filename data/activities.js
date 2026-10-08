@@ -3,19 +3,19 @@
 // "barangay" should be one of the nine Magdiwang barangays.
 
 window.HIKING = {
-  title: "[Sample] Trail name",
+  title: "[Insert trail name]",
   barangay: "Poblacion",
-  image: "assets/hiking-1.webp",
-  desc: "[Insert one or two sentences: what the trail is like and where it starts.]"
+  image: "assets/activities/hiking.webp",
+  desc: "Lush forest, drifting clouds, and a path that leads deeper into the wild."
 };
 
 window.KAYAKING = {
   title: "Sanctuary Garden Resort",
   barangay: "Tampayan",
-  desc: "[Insert one or two sentences about the paddle and what you will see.]",
-  launch: "Tampayan Dam",
-  bestTime: "[Best time of day or year]",
-  duration: "[About how long]",
+  desc: "Glide across the calm waters of Tampayan Dam, with the green hills of Sibuyan all around you. It's a gentle paddle throught the Nailog River that rewards you with quiet scenery and a slower pace.",
+  launch: "Dam",
+  bestTime: "Summer and sunny seasons",
+  duration: "N/A",
   images: ["assets/activities/kayaking.webp", "assets/activities/kayaking-2.webp", "assets/activities/kayaking-3.webp"], // 1st is the large photo
   spot: "s7"
 };
@@ -25,7 +25,7 @@ window.SWIMMING = {
   safety: "Check the weather and water conditions before you swim, never let children swim alone, and never swim with the influence of alcohol.",
   spots: [
     { name: "Rance's Haven", barangay: "Tampayan", type: "Pool & Resort", image: "assets/activities/swim.webp" },
-    { name: "[Sample] Swim spot 2", barangay: "Agutay",    type: "River", image: "assets/swim-2.webp" },
-    { name: "[Sample] Swim spot 3", barangay: "Silum",     type: "Falls", image: "assets/swim-3.webp" }
+    { name: "Dalipi River", barangay: "Tampayan",    type: "River", image: "assets/activities/swim-2.webp" },
+    { name: "Lambingan Falls", barangay: "Silum",     type: "Falls", image: "assets/activities/swim-3.webp" }
   ]
 };

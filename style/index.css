@@ -125,6 +125,9 @@ a { color: inherit; text-decoration: none; }
 /* Responsive */
 @media (max-width: 960px) { .cards { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 720px) {
+  .nav__logos { gap: 8px; align-items: center; }
+  .nav__logos img { width: 36px; height: 36px; }
+  .nav__logos h1 { font-size: 1.1rem; letter-spacing: .02em; }
   .nav { padding: 0 16px; }
   .nav__toggle { display: block; }
   .nav__links {
@@ -162,8 +165,7 @@ a { color: inherit; text-decoration: none; }
   .footer { padding-bottom: calc(28px + 64px + env(safe-area-inset-bottom, 0px)); }
 }
 
-/* ===== Install prompt banner =====
-   Paste at the END of style/index.css. Sits just above the mobile tab bar. */
+/* ===== Install alert + nav link ===== */
 .install { display: none; }
 
 @media (max-width: 720px) {
@@ -175,13 +177,17 @@ a { color: inherit; text-decoration: none; }
     background: var(--navy); color: #fff; border: 1px solid #2a3a5c;
     box-shadow: 0 8px 24px rgba(15,23,42,.35);
   }
-  .install p { flex: 1; font-size: .85rem; line-height: 1.35; margin: 0; }
-  .install__go {
-    border: 0; border-radius: 999px; padding: 8px 16px; cursor: pointer;
-    background: #fff; color: var(--navy); font: inherit; font-size: .85rem; font-weight: 600;
-  }
+  .install__link { flex: 1; display: block; line-height: 1.35; color: #fff; }
+  .install__title { display: block; font-size: .9rem; font-weight: 600; }
+  .install__sub { display: block; font-size: .78rem; color: #cbd5e1; }
   .install__x {
     border: 0; background: none; color: #cbd5e1; cursor: pointer;
     font-size: 1.4rem; line-height: 1; padding: 0 4px;
   }
+}
+
+/* "Get the app" shows as a pill in the desktop nav */
+@media (min-width: 721px) {
+  .nav__links a[href$="install.html"] { border: 1px solid rgba(255,255,255,.7); border-radius: 999px; padding: 4px 12px; }
+  .nav__links a[href$="install.html"]:hover { background: #fff; color: var(--navy); opacity: 1; }
 }

@@ -9,34 +9,6 @@
   };
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  // ----- Sliding hero (automatic) -----
-  const track = $("slides"), dotBox = $("dots"), hero = track.parentElement;
-  const count = track.children.length, DELAY = 5000;
-  let index = 0, timer = null;
-  const dots = [];
-  for (let i = 0; i < count; i++) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.setAttribute("aria-label", "Photo " + (i + 1));
-    b.addEventListener("click", () => { go(i); restart(); });
-    dotBox.appendChild(b);
-    dots.push(b);
-  }
-  function go(i) {
-    index = (i + count) % count;
-    track.style.transform = "translateX(-" + index * 100 + "%)";
-    dots.forEach((d, n) => d.setAttribute("aria-current", String(n === index)));
-  }
-  function start() { stop(); timer = setInterval(() => go(index + 1), DELAY); }
-  function stop() { if (timer) clearInterval(timer); timer = null; }
-  function restart() { if (!reduce.matches) start(); }
-  go(0);
-  if (!reduce.matches) start();
-  hero.addEventListener("mouseenter", stop);
-  hero.addEventListener("mouseleave", restart);
-  hero.addEventListener("focusin", stop);
-  hero.addEventListener("focusout", restart);
-
   // ----- Featured festival -----
   const F = window.FEATURED || {};
   $("feat-name").textContent = F.name || "Featured festival";
@@ -127,9 +99,15 @@
 
   // ----- Year calendar -----
   const cal = $("clist");
+  let lastMonth = "";
   (window.CALENDAR || []).forEach(c => {
     const row = make("div", "cal__row");
-    row.append(make("span", "cal__month", c.month), make("span", "cal__name", c.name), make("span", "cal__where", c.barangay));
+    row.append(
+      make("span", "cal__month", c.month === lastMonth ? "" : c.month),
+      make("span", "cal__name", c.name),
+      make("span", "cal__where", c.barangay)
+    );
+    lastMonth = c.month;
     cal.appendChild(row);
   });
 

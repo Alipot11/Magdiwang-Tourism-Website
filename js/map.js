@@ -2,6 +2,9 @@
   const B = window.BARANGAYS, S = window.SPOTS;
   const CATS = ["All", "Nature", "Foods", "Lodging", "Activities", "Events"];
   let current = null, cat = "All";
+  // Preselect a category from a link like index.html?cat=Lodging#map-section
+  const wantedCat = new URLSearchParams(location.search).get("cat");
+  if (CATS.includes(wantedCat)) cat = wantedCat;
   const markers = {}
 
   const map = L.map("map", { scrollWheelZoom: false });

@@ -8,36 +8,6 @@
     return e;
   }
 
-  // ----- Sliding hero (automatic, same as the other pages) -----
-  const track = document.getElementById("slides");
-  const dotBox = document.getElementById("dots");
-  const hero = track.parentElement;
-  const count = track.children.length;
-  let index = 0, timer = null;
-  const dots = [];
-  for (let i = 0; i < count; i++) {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.setAttribute("aria-label", "Photo " + (i + 1));
-    b.addEventListener("click", () => { go(i); restart(); });
-    dotBox.appendChild(b);
-    dots.push(b);
-  }
-  function go(i) {
-    index = (i + count) % count;
-    track.style.transform = "translateX(-" + index * 100 + "%)";
-    dots.forEach((d, n) => d.setAttribute("aria-current", String(n === index)));
-  }
-  function start() { stop(); timer = setInterval(() => go(index + 1), 5000); }
-  function stop() { if (timer) clearInterval(timer); timer = null; }
-  function restart() { if (!reduce.matches) start(); }
-  go(0);
-  if (!reduce.matches) start();
-  hero.addEventListener("mouseenter", stop);
-  hero.addEventListener("mouseleave", restart);
-  hero.addEventListener("focusin", stop);
-  hero.addEventListener("focusout", restart);
-
   // ----- Anchor bar highlight -----
   const links = [...document.querySelectorAll(".csub__in a[href^='#']")];
   const secs = links.map(a => document.querySelector(a.getAttribute("href")));
