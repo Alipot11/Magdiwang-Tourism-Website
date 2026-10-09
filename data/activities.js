@@ -3,10 +3,10 @@
 // "barangay" should be one of the nine Magdiwang barangays.
 
 window.HIKING = {
-  title: "[Insert trail name]",
-  barangay: "Poblacion",
+  title: "Walk deeper into the wild.",
+  barangay: "",
   image: "assets/activities/hiking.webp",
-  desc: "Lush forest, drifting clouds, and a path that leads deeper into the wild."
+  desc: "Lush forest, drifting clouds, and a path that leads deeper into the wild. Follow the trail through thick, green forest as clouds drift low over the mountains. Every step brings you closer to the quiet, where the air is cool and the only sounds are the forest around you."
 };
 
 window.KAYAKING = {
@@ -21,11 +21,11 @@ window.KAYAKING = {
 };
 
 window.SWIMMING = {
-  intro: "[Insert one line about swimming in Magdiwang.]",
+  intro: "Cool rivers, a forest waterfall, and a resort pool: Magdiwang has a place for every kind of swimmer.",
   safety: "Check the weather and water conditions before you swim, never let children swim alone, and never swim with the influence of alcohol.",
   spots: [
     { name: "Rance's Haven", barangay: "Tampayan", type: "Pool & Resort", image: "assets/activities/swim.webp" },
     { name: "Dalipi River", barangay: "Tampayan",    type: "River", image: "assets/activities/swim-2.webp" },
-    { name: "Lambingan Falls", barangay: "Silum",     type: "Falls", image: "assets/activities/swim-3.webp" }
+    { name: "Dam", barangay: "Tampayan", type: "River", image: "assets/activities/swim-4.webp" }
   ]
 };

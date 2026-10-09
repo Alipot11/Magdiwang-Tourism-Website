@@ -90,13 +90,40 @@
     if (w.image) {
       photo.style.backgroundImage = "url('../" + w.image + "')";
       photo.setAttribute("role", "img");
-      photo.setAttribute("aria-label", w.name);
+      photo.setAttribute("aria-label", w.name, w.conservation);
     }
     const tags = make("div", "sp__tags");
     tags.append(make("span", "sp__tag", w.tag));
     if (w.endemic) tags.append(make("span", "sp__tag sp__endemic", "Endemic"));
     if (w.scientific) tags.append(make("span", "sp__tag sp__sci", w.scientific));
-    card.append(photo, tags, make("h3", "sp__name", w.name), make("p", "sp__note", w.note || ""));
+    const status = w.status ? make("p", "sp__status") : null;
+    if (status) {
+      status.append(make("span", "sp__status-label", "Conservation status: "), document.createTextNode(w.status));
+    }
+    const local = w.local ? make("p", "sp__local") : null;
+    if (local) {
+      local.append(make("span", "sp__local-label", "Filipino name: "), document.createTextNode(w.local));
+    }
+    let credit = null;
+    if (w.credit) {
+      credit = make("p", "sp__credit");
+      credit.append(document.createTextNode("Photo: "));
+      if (w.creditUrl) {
+        const a = make("a", "", w.credit);
+        a.href = w.creditUrl;
+        a.target = "_blank";
+        a.rel = "noopener";
+        credit.appendChild(a);
+      } else {
+        credit.appendChild(document.createTextNode(w.credit));
+      }
+    }
+    card.appendChild(photo);
+    if (credit) card.appendChild(credit);
+    card.append(tags, make("h3", "sp__name", w.name));
+    if (local) card.appendChild(local);
+    card.appendChild(make("p", "sp__note", w.note || ""));
+    if (status) card.appendChild(status);
     grid.appendChild(card);
   });
 
@@ -106,11 +133,74 @@
   if (!coast.length) list.appendChild(make("p", "coast__empty", "No places listed yet."));
   coast.forEach(c => {
     const row = make("div", "coast__row");
-    const photo = make("div", "coast__photo");
-    if (c.image) photo.style.backgroundImage = "url('../" + c.image + "')";
+    const pics = c.images && c.images.length ? c.images : [c.image || ""];
+    const total = Math.ceil(pics.length / 3);
+    let at = 0;
+
+    const media = make("div", "coast__media");
+    const view = make("div", "coast__view");
+    view.tabIndex = 0;
+    view.setAttribute("aria-label", c.name + " photos, use the arrows to slide");
+    const track = make("div", "coast__track");
+    for (let s = 0; s < total; s++) {
+      const group = pics.slice(s * 3, s * 3 + 3);
+      const slide = make("div", "coast__photos coast__photos--" + group.length);
+      group.forEach((u, n) => {
+        const d = make("div", "coast__photo");
+        if (u) d.style.backgroundImage = "url('../" + u + "')";
+        d.setAttribute("role", "img");
+        d.setAttribute("aria-label", c.name + " photo " + (s * 3 + n + 1));
+        slide.appendChild(d);
+      });
+      track.appendChild(slide);
+    }
+    view.appendChild(track);
+    media.appendChild(view);
+
+    if (total > 1) {
+      const prevB = make("button", "coast__btn coast__btn--prev", "\u2190");
+      const nextB = make("button", "coast__btn coast__btn--next", "\u2192");
+      prevB.type = nextB.type = "button";
+      prevB.setAttribute("aria-label", "Previous photos");
+      nextB.setAttribute("aria-label", "Next photos");
+      const dotBox = make("div", "coast__dots");
+      const dotList = [];
+      for (let s = 0; s < total; s++) {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", "Slide " + (s + 1));
+        b.addEventListener("click", () => go(s));
+        dotBox.appendChild(b);
+        dotList.push(b);
+      }
+      function go(i) {
+        at = Math.min(total - 1, Math.max(0, i));
+        track.style.transform = "translateX(-" + at * 100 + "%)";
+        dotList.forEach((d, n) => d.setAttribute("aria-current", String(n === at)));
+        prevB.disabled = at === 0;
+        nextB.disabled = at === total - 1;
+      }
+      prevB.addEventListener("click", () => go(at - 1));
+      nextB.addEventListener("click", () => go(at + 1));
+      view.addEventListener("keydown", e => {
+        if (e.key === "ArrowLeft") go(at - 1);
+        if (e.key === "ArrowRight") go(at + 1);
+      });
+      let x0 = null;
+      view.addEventListener("pointerdown", e => { x0 = e.clientX; });
+      view.addEventListener("pointerup", e => {
+        if (x0 === null) return;
+        const dx = e.clientX - x0; x0 = null;
+        if (Math.abs(dx) > 50) go(at + (dx < 0 ? 1 : -1));
+      });
+      view.addEventListener("pointercancel", () => { x0 = null; });
+      media.append(prevB, nextB, dotBox);
+      go(0);
+    }
+
     const body = make("div", "coast__body");
     body.append(make("div", "coast__tag", c.barangay), make("div", "coast__name", c.name), make("p", "coast__blurb", c.blurb || ""));
-    row.append(photo, body);
+    row.append(media, body);
     list.appendChild(row);
   });
 })();
