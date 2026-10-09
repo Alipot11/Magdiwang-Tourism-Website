@@ -35,10 +35,10 @@ if ("serviceWorker" in navigator && document.currentScript) {
   // Edit this list to change the tabs (icons are 24x24 line paths)
   const TABS = [
     { label: "Explore", href: "html/explore.html",    icon: '<circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6z"/>' },
-    { label: "Stay",    href: "html/lodging.html",    icon: '<path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/>' },
+    { label: "Stay",    href: "html/lodging.html",    icon: '<path d="M3 6v13M3 16h18v3M21 16v-4a3 3 0 0 0-3-3h-8v7"/><circle cx="6.5" cy="11" r="1.5"/>' },
     { label: "Eat",     href: "html/foods.html",      icon: '<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2 1-3 4-3 8h3"/>' },
     { label: "Do",      href: "html/activities.html", icon: '<path d="M3 20l6-11 4 7 3-4 5 8z"/>' },
-    { label: "Map",     href: "index.html#map-section", icon: '<path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/>' }
+    { label: "Home", href: "index.html", icon: '<path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/>' }
   ];
 
   const clean = p => (p.endsWith("/") ? p + "index.html" : p);
@@ -59,14 +59,11 @@ if ("serviceWorker" in navigator && document.currentScript) {
   function mark() {
     const path = clean(location.pathname);
     links.forEach(({ a, url }) => {
-      let on = clean(url.pathname) === path;
-      if (url.hash) on = on && location.hash === url.hash;           // Map tab
-      else if (clean(url.pathname) === path && path.endsWith("index.html") && location.hash === "#map-section") on = false;
-      if (on) a.setAttribute("aria-current", "page");
-      else a.removeAttribute("aria-current");
-    });
+     const on = clean(url.pathname) === path;
+     if (on) a.setAttribute("aria-current", "page");
+     else a.removeAttribute("aria-current");
+   });
   }
-  window.addEventListener("hashchange", mark);
   mark();
   document.body.appendChild(nav);
 })();

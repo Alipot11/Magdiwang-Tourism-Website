@@ -21,7 +21,7 @@ window.WILDLIFE = [
 
 // COAST: image example "assets/coast-1.webp"
 window.COAST = [
-  { name: "Puyo Rock Formations", barangay: "Sitio Puyo, Ipil", blurb: "[One or two lines about the place.]", images: [
+  { name: "Golden Rock Beach", barangay: "Sitio Puyo, Ipil", blurb: "Rust-colored rocks and weathered cliffs meet turquoise water at Sitio Puyo, where the sea rolls in against the stone. Shades of gold, orange, and red run through the rock, shaped over time by wind and waves. Watch the horizon, and take in a stretch of coast that feels untouched.", images: [
     "assets/nature/coast.webp", "assets/nature/coast-2.webp", "assets/nature/coast-3.webp", "assets/nature/coast-4.webp", "assets/nature/coast-5.webp", "assets/nature/coast-6.webp"
   ]}
 ];
