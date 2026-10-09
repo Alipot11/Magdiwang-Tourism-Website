@@ -26,6 +26,6 @@ window.SWIMMING = {
   spots: [
     { name: "Rance's Haven", barangay: "Tampayan", type: "Pool & Resort", image: "assets/activities/swim.webp" },
     { name: "Dalipi River", barangay: "Tampayan",    type: "River", image: "assets/activities/swim-2.webp" },
-    { name: "Lambingan Falls", barangay: "Silum",     type: "Falls", image: "assets/activities/swim-3.webp" }
+    { name: "Dam", barangay: "Tampayan", type: "River", image: "assets/activities/swim-4.webp" }
   ]
 };

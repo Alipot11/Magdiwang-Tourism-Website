@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/updates.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
   <link rel="stylesheet" href="style/index.css">
   <link rel="stylesheet" href="style/map.css">
@@ -56,6 +57,25 @@
         </div>
       </div>
       <div class="hero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
+    </section>
+
+    <section class="updates" id="updates" aria-label="Latest updates">
+      <div class="wrap">
+        <div class="updates__head">
+          <div>
+            <h2>LATEST NEWS</h2>
+            <p class="lead">News from the Tourism Office</p>
+          </div>
+          <div class="updates__nav">
+            <button type="button" class="updates__btn" id="uprev" aria-label="Previous update">&#8592;</button>
+            <button type="button" class="updates__btn" id="unext" aria-label="Next update">&#8594;</button>
+          </div>
+        </div>
+        <div class="updates__view" id="uview" tabindex="0" aria-label="Latest updates, use the arrows to slide">
+          <div class="updates__track" id="utrack"></div>
+        </div>
+        <div class="updates__dots" id="udots" role="group" aria-label="Choose an update"></div>
+      </div>
     </section>
  
     <section class="discover" id="discover">
@@ -213,7 +233,7 @@
           <strong>MAGDIWANG TOURISM OFFICE</strong>
         </div>
         <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
-        <p class="footer__contact"><b>Telephone:</b></p>
+        <p class="footer__contact"><b>Telephone: 09984555038</b></p>
         <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
       </div>
       <div class="footer__col">
@@ -228,6 +248,7 @@
       <div class="footer__col">
         <h4>MAGDIWANG</h4>
         <a href="#about">About</a>
+        <a href="html/install.html">Get the app</a>
       </div>
     </div>
     <div class="wrap footer__bottom">
@@ -237,8 +258,10 @@
   </footer>
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="data/updates.js"></script>
   <script src="js/home.js"></script>
   <script src="data/spots.js"></script>
+    <script src="js/updates.js"></script>
   <script src="js/main.js"></script>
   <script src="js/map.js"></script>
 </body>
