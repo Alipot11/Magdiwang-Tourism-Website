@@ -93,4 +93,78 @@
     a.append(photo, body);
     list.appendChild(a);
   });
+  
+    // ----- Cafes (portrait photo strip per cafe) -----
+  const cafeList = document.getElementById("cafelist");
+  const cafes = window.CAFES || [];
+  if (cafeList) {
+    if (!cafes.length) {
+      const p = document.createElement("p");
+      p.className = "cafes__empty";
+      p.textContent = "No cafes listed yet.";
+      cafeList.appendChild(p);
+    }
+    cafes.forEach(c => {
+      const card = document.createElement("article");
+      card.className = "cafe";
+
+      const head = document.createElement("div");
+      head.className = "cafe__head";
+      const info = document.createElement("div");
+      const tag = document.createElement("div");
+      tag.className = "cafe__tag"; tag.textContent = "CAFE";
+      const name = document.createElement("div");
+      name.className = "cafe__name"; name.textContent = c.name;
+      const meta = document.createElement("div");
+      meta.className = "cafe__meta"; meta.textContent = c.barangay + " \u00B7 " + c.specialty;
+      const blurb = document.createElement("p");
+      blurb.className = "cafe__blurb"; blurb.textContent = c.blurb || "";
+      info.append(tag, name, meta, blurb);
+
+      const nav = document.createElement("div");
+      nav.className = "cafe__nav";
+      const prevB = document.createElement("button");
+      const nextB = document.createElement("button");
+      prevB.type = nextB.type = "button";
+      prevB.className = nextB.className = "cafe__btn";
+      prevB.textContent = "\u2190"; nextB.textContent = "\u2192";
+      prevB.setAttribute("aria-label", "Previous photos of " + c.name);
+      nextB.setAttribute("aria-label", "Next photos of " + c.name);
+      nav.append(prevB, nextB);
+      head.append(info, nav);
+
+      const strip = document.createElement("div");
+      strip.className = "cafe__strip";
+      strip.tabIndex = 0;
+      strip.setAttribute("aria-label", c.name + " photos, use the arrows to slide");
+      const pics = c.images && c.images.length ? c.images : [""];
+      pics.forEach((u, n) => {
+        const d = document.createElement("div");
+        d.className = "cafe__photo";
+        if (u) d.style.backgroundImage = "url('../" + u + "')";
+        d.setAttribute("role", "img");
+        d.setAttribute("aria-label", c.name + " photo " + (n + 1));
+        strip.appendChild(d);
+      });
+
+      function update() {
+        const max = strip.scrollWidth - strip.clientWidth;
+        nav.hidden = max <= 1;
+        prevB.disabled = strip.scrollLeft <= 1;
+        nextB.disabled = strip.scrollLeft >= max - 1;
+      }
+      prevB.addEventListener("click", () => strip.scrollBy({ left: -strip.clientWidth, behavior: "smooth" }));
+      nextB.addEventListener("click", () => strip.scrollBy({ left: strip.clientWidth, behavior: "smooth" }));
+      strip.addEventListener("scroll", update, { passive: true });
+      strip.addEventListener("keydown", e => {
+        if (e.key === "ArrowLeft") prevB.click();
+        if (e.key === "ArrowRight") nextB.click();
+      });
+      window.addEventListener("resize", update);
+
+      card.append(head, strip);
+      cafeList.appendChild(card);
+      update();
+    });
+  }
 })();
