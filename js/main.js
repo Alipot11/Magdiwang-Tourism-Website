@@ -25,7 +25,6 @@ if ("serviceWorker" in navigator && document.currentScript) {
 }
 
 // ===== Mobile bottom tab bar =====
-// Paste at the END of js/main.js. Works on index.html and every page in html/.
 // It is only visible on phones (see the matching CSS in style/index.css).
 (function () {
   const src = document.currentScript && document.currentScript.src;
@@ -36,9 +35,9 @@ if ("serviceWorker" in navigator && document.currentScript) {
   const TABS = [
     { label: "Explore", href: "html/explore.html",    icon: '<circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6z"/>' },
     { label: "Stay",    href: "html/lodging.html",    icon: '<path d="M3 6v13M3 16h18v3M21 16v-4a3 3 0 0 0-3-3h-8v7"/><circle cx="6.5" cy="11" r="1.5"/>' },
+    { label: "Home", href: "index.html", icon: '<path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/>' },
     { label: "Eat",     href: "html/coming-soon.html",      icon: '<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10"/><path d="M17 21V3c-2 1-3 4-3 8h3"/>' },
-    { label: "Do",      href: "html/activities.html", icon: '<path d="M3 20l6-11 4 7 3-4 5 8z"/>' },
-    { label: "Home", href: "index.html", icon: '<path d="M3 11l9-7 9 7v9H3z"/><path d="M9 20v-6h6v6"/>' }
+    { label: "Do",      href: "html/activities.html", icon: '<path d="M3 20l6-11 4 7 3-4 5 8z"/>' }
   ];
 
   const clean = p => (p.endsWith("/") ? p + "index.html" : p);
