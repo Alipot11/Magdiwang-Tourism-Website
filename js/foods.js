@@ -133,11 +133,12 @@
       nav.append(prevB, nextB);
       head.append(info, nav);
 
-      const strip = document.createElement("div");
+            const strip = document.createElement("div");
       strip.className = "cafe__strip";
       strip.tabIndex = 0;
       strip.setAttribute("aria-label", c.name + " photos, use the arrows to slide");
       const pics = c.images && c.images.length ? c.images : [""];
+      const photos = [];
       pics.forEach((u, n) => {
         const d = document.createElement("div");
         d.className = "cafe__photo";
@@ -145,13 +146,38 @@
         d.setAttribute("role", "img");
         d.setAttribute("aria-label", c.name + " photo " + (n + 1));
         strip.appendChild(d);
+        photos.push(d);
       });
+
+      // Dots (shown on phones only, see CSS)
+      const dotBox = document.createElement("div");
+      dotBox.className = "cafe__dots";
+      dotBox.setAttribute("role", "group");
+      dotBox.setAttribute("aria-label", "Choose a photo of " + c.name);
+      const dots = pics.map((_, n) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", "Photo " + (n + 1));
+        b.addEventListener("click", () =>
+          strip.scrollTo({ left: photos[n].offsetLeft - photos[0].offsetLeft, behavior: "smooth" }));
+        dotBox.appendChild(b);
+        return b;
+      });
+      if (pics.length < 2) dotBox.hidden = true;
 
       function update() {
         const max = strip.scrollWidth - strip.clientWidth;
         nav.hidden = max <= 1;
         prevB.disabled = strip.scrollLeft <= 1;
         nextB.disabled = strip.scrollLeft >= max - 1;
+
+        let on = 0, best = Infinity;
+        photos.forEach((p, n) => {
+          const d = Math.abs(p.offsetLeft - photos[0].offsetLeft - strip.scrollLeft);
+          if (d < best) { best = d; on = n; }
+        });
+        if (max > 1 && strip.scrollLeft >= max - 1) on = photos.length - 1;
+        dots.forEach((d, n) => d.setAttribute("aria-current", String(n === on)));
       }
       prevB.addEventListener("click", () => strip.scrollBy({ left: -strip.clientWidth, behavior: "smooth" }));
       nextB.addEventListener("click", () => strip.scrollBy({ left: strip.clientWidth, behavior: "smooth" }));
@@ -162,7 +188,7 @@
       });
       window.addEventListener("resize", update);
 
-      card.append(head, strip);
+      card.append(head, strip, dotBox);
       cafeList.appendChild(card);
       update();
     });

@@ -66,12 +66,15 @@ h2 { font-size: 2.4rem; font-weight: 700; }
 .cafe__nav { display: flex; gap: 8px; flex: none; }
 .cafe__btn { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--navy); background: #fff; color: var(--navy); font-size: 1.1rem; cursor: pointer; }
 .cafe__btn:hover { background: var(--navy); color: #fff; }
-.cafe__btn:disabled { opacity: .35; cursor: default; background: #fff; color: var(--navy); }
+.cafe__btn:disabled { opacity: .35; cursor: default; background: #fff; color: var(--navy); position: relative; }
 .cafe__strip { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; }
 .cafe__strip::-webkit-scrollbar { display: none; }
 .cafe__strip:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
 .cafe__photo { flex: 0 0 calc((100% - 48px) / 4); aspect-ratio: 3 / 4; scroll-snap-align: start; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
 .cafes__empty { padding: 40px 0; color: var(--muted); }
+.cafe__dots { display: none; }
+.cafe__dots button { width: 8px; height: 8px; padding: 0; border-radius: 50%; border: 1.5px solid var(--navy); background: transparent; cursor: pointer; }
+.cafe__dots button[aria-current="true"] { background: var(--navy); }
 
 
 @media (max-width: 900px) {
@@ -89,12 +92,11 @@ h2 { font-size: 2.4rem; font-weight: 700; }
   .dishes__slide { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 130px 130px; }
   .dishes__tile:first-child { grid-column: 1 / 3; }
   .cafes { padding: 56px 0; }
+  .cafe { padding: 32px 0; }
   .cafe__name { font-size: 1.5rem; }
-  .cafe__head { flex-direction: column; align-items: flex-start; gap: 14px; }
-  .cafe__strip { gap: 12px; }
-  .cafe__photo { flex-basis: calc((100% - 12px) / 2); }
+  .cafe__nav { display: none; }
+  .cafe__strip { gap: 12px; margin: 0 -24px; padding: 0 24px; scroll-padding-left: 24px; }
+  .cafe__photo { flex-basis: 72%; }
+  .cafe__dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
   h2 { font-size: 2rem; }
-}
-@media (max-width: 420px) {
-  .cafe__photo { flex-basis: 78%; } /* next photo peeks in, so it's clear you can swipe */
 }

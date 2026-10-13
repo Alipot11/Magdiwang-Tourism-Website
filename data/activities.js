@@ -3,7 +3,7 @@
 // "barangay" should be one of the nine Magdiwang barangays.
 
 window.HIKING = {
-  title: "Walk deeper into the wild.",
+  title: "Walk deeper into the wild",
   barangay: "",
   image: "assets/activities/hiking.webp",
   desc: "Lush forest, drifting clouds, and a path that leads deeper into the wild. Follow the trail through thick, green forest as clouds drift low over the mountains. Every step brings you closer to the quiet, where the air is cool and the only sounds are the forest around you."
