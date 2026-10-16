@@ -1,0 +1,46 @@
+/* Homepage weather section: builds on index.css (variables, .wrap, .lead) */
+.weather { background: #fff; padding: 70px 0 80px; }
+.weather__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.weather__head h2 { font-size: 2.2rem; font-weight: 700; }
+.weather__head .lead { margin: 8px 0 0; }
+.weather__places { display: flex; gap: 8px; flex-wrap: wrap; }
+.wx__place { height: 40px; padding: 0 18px; border-radius: 999px; border: 1.5px solid var(--navy); background: #fff; color: var(--navy); font: inherit; font-size: .9rem; font-weight: 500; cursor: pointer; }
+.wx__place:hover { background: #e2e8f0; }
+.wx__place[aria-pressed="true"] { background: var(--navy); color: #fff; }
+.wx__place:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+
+.weather__grid { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 24px; margin-top: 28px; align-items: start; }
+
+/* "Now" card: navy, or a photo with a dark overlay when data/weather.js sets an image */
+.wx__now { background: var(--navy) center / cover no-repeat; color: #fff; border-radius: var(--radius); padding: 28px; box-shadow: 0 6px 18px rgba(15,23,42,.18); }
+.wx__label { font-size: .8rem; letter-spacing: .14em; opacity: .85; }
+.wx__main { display: flex; align-items: center; gap: 16px; margin-top: 12px; min-height: 64px; }
+.wx__temp { font-size: 4rem; font-weight: 600; line-height: 1; }
+.wx__cond { opacity: .88; }
+.wx__facts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+.wx__facts dt { font-size: .8rem; opacity: .75; }
+.wx__facts dd { font-size: 1.1rem; font-weight: 500; }
+
+.wx__days { display: grid; grid-template-columns: repeat(5, minmax(86px, 1fr)); gap: 12px; overflow-x: auto; }
+.wx__day { background: var(--bg-soft); border-radius: 10px; padding: 18px 10px; text-align: center; color: var(--navy); }
+.wx__dayname { font-weight: 600; }
+.wx__dayicon { display: grid; place-items: center; margin: 10px 0; }
+.wx__hi { font-size: 1.25rem; font-weight: 600; }
+.wx__lo, .wx__rain { color: var(--muted); }
+.wx__rain { font-size: .8rem; margin-top: 6px; }
+
+.wx__ferry { margin-top: 16px; padding: 16px 20px; background: var(--bg-soft); border-radius: 10px; color: var(--muted); display: flex; gap: 12px; align-items: baseline; }
+.wx__ferry[hidden] { display: none; }
+.wx__ferry::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; }
+.wx__ferry b { color: var(--text); font-weight: 600; }
+.wx__meta { margin-top: 16px; color: var(--muted); font-size: .8rem; }
+.wx__meta a { text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .weather__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .weather { padding: 48px 0 56px; }
+  .weather__head h2 { font-size: 2rem; }
+  .wx__now { padding: 22px; }
+}

@@ -34,6 +34,7 @@ const PRECACHE = [
   "style/culture.css",
   "style/updates.css",
   "style/trip.css",
+  "style/weather.css",
   "js/main.js",
   "js/home.js",
   "js/map.js",
@@ -47,6 +48,7 @@ const PRECACHE = [
   "js/updates.js",
   "js/trip.js",
   "js/trip-page.js",
+  "js/weather.js",
   "data/spots.js",
   "data/explore.js",
   "data/nature.js",
@@ -122,6 +124,8 @@ function save(cacheName, req, res) {
 
 self.addEventListener("fetch", event => {
   const req = event.request;
+  // Live weather: always ask the network. The page keeps its own saved copy for offline use.
+  if (url.hostname === "api.open-meteo.com") return;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
 
