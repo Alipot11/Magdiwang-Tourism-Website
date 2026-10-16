@@ -191,3 +191,19 @@ a { color: inherit; text-decoration: none; }
   .nav__links a[href$="install.html"] { border: 1px solid rgba(255,255,255,.7); border-radius: 999px; padding: 4px 12px; }
   .nav__links a[href$="install.html"]:hover { background: #fff; color: var(--navy); opacity: 1; }
 }
+
+/* ===== Save to My Trip ===== */
+.heart { flex: none; width: 44px; height: 44px; padding: 0; border: 1px solid #dde4ee; border-radius: 50%; background: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 2px 8px rgba(15,23,42,.15); }
+.heart svg { width: 22px; height: 22px; fill: none; stroke: var(--navy); stroke-width: 2; stroke-linejoin: round; }
+.heart:hover { border-color: var(--navy); }
+.heart.on svg { fill: #e11d48; stroke: #e11d48; }
+.heart:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.heart--abs { position: absolute; top: 12px; right: 12px; z-index: 3; }
+.spotwrap { position: relative; }
+
+@media (min-width: 721px) {
+  .nav__links .nav__trip { border: 1px solid rgba(255,255,255,.7); border-radius: 999px; padding: 4px 12px; white-space: nowrap; }
+  .nav__links .nav__trip:hover, .nav__links .nav__trip[aria-current="page"] { background: #fff; color: var(--navy); opacity: 1; }
+}
+/* the nav gets tight with one more link on smaller laptops */
+@media (min-width: 721px) and (max-width: 1180px) { .nav__links { gap: 14px; } }

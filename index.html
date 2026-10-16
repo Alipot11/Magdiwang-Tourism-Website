@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
   <link rel="stylesheet" href="style/index.css">
   <link rel="stylesheet" href="style/map.css">
+  <link rel="stylesheet" href="style/weather.css">
 </head>
 <body>
  
@@ -202,6 +203,39 @@
         </section>
       </div>
     </section>
+
+    <!-- Weather: paste between the About section and the map section in index.html -->
+    <section class="weather" id="weather" aria-labelledby="wx-title">
+      <div class="wrap">
+        <div class="weather__head">
+          <div>
+            <h2 id="wx-title">Weather in Magdiwang</h2>
+            <p class="lead">Plan your days and your crossing</p>
+          </div>
+          <div class="weather__places" id="wx-places" role="group" aria-label="Choose a barangay"></div>
+        </div>
+        <div class="weather__grid">
+          <div class="wx__now" id="wx-now" aria-live="polite">
+            <div class="wx__label" id="wx-label">NOW</div>
+            <div class="wx__main">
+              <div id="wx-icon"></div>
+              <div><div class="wx__temp" id="wx-temp">&ndash;</div><div class="wx__cond" id="wx-cond"></div></div>
+            </div>
+            <dl class="wx__facts">
+              <div><dt>Wind</dt><dd id="wx-wind">&ndash;</dd></div>
+              <div><dt>Humidity</dt><dd id="wx-hum">&ndash;</dd></div>
+              <div><dt>Feels like</dt><dd id="wx-feels">&ndash;</dd></div>
+              <div><dt>Sunset</dt><dd id="wx-sunset">&ndash;</dd></div>
+            </dl>
+          </div>
+          <div>
+            <div class="wx__days" id="wx-days"></div>
+            <p class="wx__ferry" id="wx-ferry" hidden></p>
+          </div>
+        </div>
+        <p class="wx__meta"><span id="wx-status" role="status"></span> Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a>.</p>
+      </div>
+    </section>
  
     <section class="mapsec" id="map-section">
       <div class="wrap">
@@ -258,11 +292,14 @@
   </footer>
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="js/trip.js"></script>
   <script src="data/updates.js"></script>
   <script src="js/home.js"></script>
   <script src="data/spots.js"></script>
-    <script src="js/updates.js"></script>
+  <script src="js/updates.js"></script>
   <script src="js/main.js"></script>
+  <script src="data/weather.js"></script>
+  <script src="js/weather.js"></script>
   <script src="js/map.js"></script>
 </body>
 </html>

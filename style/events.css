@@ -42,7 +42,7 @@ section[id] { scroll-margin-top: 130px; }
 .up { background: var(--bg-soft); padding: 80px 0 88px; }
 .up__row { display: flex; gap: 48px; align-items: center; padding: 32px 0; border-bottom: 1px solid #dde4ee; }
 .up__row:nth-child(even) { flex-direction: row-reverse; }
-.up__photo { flex: 0 0 min(600px, 52%); height: 340px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+.up__photo { position: relative; flex: 0 0 min(600px, 52%); height: 340px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
 .up__body { flex: 1; min-width: 0; }
 .up__date { display: inline-block; padding: 3px 14px; border: 1px solid #cbd5e1; border-radius: 999px; font-size: .8rem; font-weight: 500; }
 .up__name { font-size: 1.9rem; font-weight: 600; margin: 10px 0 4px; }
