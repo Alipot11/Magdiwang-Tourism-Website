@@ -1,0 +1,46 @@
+/* My Trip page: builds on index.css (nav, footer, variables, .heart) */
+h2 { font-weight: 600; }
+
+/* Hero (static) */
+.thero { min-height: 40vh; display: grid; align-items: end; color: #fff; background: var(--navy); }
+.thero__text { max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 56px; }
+.thero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
+.thero__text h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); font-weight: 600; margin-top: 6px; line-height: 1.05; }
+.thero__text p:last-child { margin-top: 10px; font-size: 1.1rem; opacity: .92; }
+
+.trip { padding: 8px 0 88px; }
+.trip__grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 56px; align-items: start; }
+.trip__group { margin-top: 40px; }
+.trip__gtitle { font-size: 1.5rem; padding-bottom: 8px; border-bottom: 2px solid var(--navy); }
+.trip__row { display: flex; align-items: center; gap: 20px; padding: 20px 0; border-bottom: 1px solid #dde4ee; }
+.trip__photo { flex: none; width: 200px; height: 120px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+.trip__body { flex: 1; min-width: 0; }
+.trip__name { font-size: 1.3rem; font-weight: 600; }
+.trip__meta { color: var(--muted); margin-top: 4px; }
+.trip__go { display: inline-block; margin-top: 8px; font-weight: 500; font-size: .9rem; }
+.trip__go:hover { text-decoration: underline; }
+
+.trip__empty { padding-top: 40px; display: grid; gap: 14px; justify-items: start; }
+.trip__empty p { color: var(--muted); }
+
+.trip__panel { position: sticky; top: 96px; margin-top: 40px; background: var(--bg-soft); border-radius: var(--radius); padding: 24px; display: grid; gap: 12px; }
+.trip__panel h2 { font-size: 1.25rem; }
+.trip__note { color: var(--muted); }
+.trip__btn { display: flex; align-items: center; justify-content: center; height: 44px; padding: 0 22px; border-radius: 999px; border: 1.5px solid var(--navy); background: #fff; color: var(--navy); font: inherit; font-weight: 500; cursor: pointer; }
+.trip__btn:hover { background: #e2e8f0; }
+.trip__btn--dark { background: var(--navy); color: #fff; }
+.trip__btn--dark:hover { background: #1e293b; }
+.trip__btn:disabled, .trip__btn[aria-disabled="true"] { opacity: .4; pointer-events: none; }
+.trip__btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.trip__status { min-height: 1.4em; color: var(--muted); font-size: .9rem; }
+
+@media (max-width: 900px) {
+  .trip__grid { grid-template-columns: 1fr; gap: 0; }
+  .trip__panel { position: static; order: -1; margin-top: 24px; }
+}
+@media (max-width: 720px) {
+  .thero { min-height: 34vh; }
+  .trip__photo { width: 110px; height: 90px; }
+  .trip__name { font-size: 1.1rem; }
+  .trip__row { gap: 14px; }
+}

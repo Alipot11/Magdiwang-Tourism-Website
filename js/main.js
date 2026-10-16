@@ -131,3 +131,15 @@ if ("serviceWorker" in navigator && document.currentScript) {
 
   setTimeout(show, DELAY);
 })();
+
+// ===== My Trip (nav link) =====
+// Pages that show hearts load js/trip.js themselves (index, lodging, events).
+// Every other page loads it here so the "My Trip" nav link still appears.
+(function () {
+  if (window.Trip) return;
+  const src = document.currentScript && document.currentScript.src;
+  if (!src) return;
+  const s = document.createElement("script");
+  s.src = new URL("trip.js", src).href; // same folder as main.js
+  document.body.appendChild(s);
+})();

@@ -23,7 +23,10 @@ section[id] { scroll-margin-top: 130px; }
 .lodging__map:hover { text-decoration: underline; }
 
 /* Plain rows, no cards */
-.lodging__row { display: grid; grid-template-columns: 220px minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid #dde4ee; }
+.lodging__row { position: relative; display: grid; grid-template-columns: 220px minmax(0, 1fr) auto auto; gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid #dde4ee; }
+.lodging__name a::after { content: ""; position: absolute; inset: 0; }
+.lodging__name a:focus-visible::after { outline: 2px solid var(--navy); outline-offset: -2px; }
+.lodging__row .heart { position: relative; z-index: 2; }
 .lodging__row:hover .lodging__name { text-decoration: underline; }
 .lodging__photo { height: 130px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
 .lodging__name { font-size: 1.3rem; font-weight: 600; }
@@ -33,7 +36,7 @@ section[id] { scroll-margin-top: 130px; }
 
 @media (max-width: 720px) {
   .lhero { min-height: 60vh; }
-  .lodging__row { grid-template-columns: 110px minmax(0, 1fr); gap: 14px; }
+  .lodging__row { grid-template-columns: 110px minmax(0, 1fr) auto; }
   .lodging__photo { height: 90px; }
   .lodging__go { display: none; }
 }

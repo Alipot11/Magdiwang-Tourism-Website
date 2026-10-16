@@ -33,6 +33,7 @@
     const row = make("article", "up__row");
     const photo = make("div", "up__photo");
     if (e.image) photo.style.backgroundImage = img(e.image);
+    if (window.Trip && e.id) photo.appendChild(window.Trip.button(e.id, e.name, true));
     const body = make("div", "up__body");
     body.append(
       make("span", "up__date", e.date),

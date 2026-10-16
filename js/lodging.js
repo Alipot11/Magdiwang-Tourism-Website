@@ -15,9 +15,10 @@
       return;
     }
     shown.forEach(l => {
-      const a = document.createElement("a");
-      a.className = "lodging__row";
-      a.href = l.page || "coming-soon.html"; // + encodeURIComponent(l.id); --> add if there is a content page made
+      // The row is a div so the heart button is not inside a link.
+      // The name link is stretched over the row with CSS, so the whole row still opens it.
+      const row = document.createElement("div");
+      row.className = "lodging__row";
 
       const photo = document.createElement("div");
       photo.className = "lodging__photo";
@@ -26,7 +27,10 @@
       const text = document.createElement("div");
       const name = document.createElement("div");
       name.className = "lodging__name";
-      name.textContent = l.name;
+      const link = document.createElement("a");
+      link.href = l.page || "coming-soon.html"; // + encodeURIComponent(l.id); --> add if there is a content page made
+      link.textContent = l.name;
+      name.appendChild(link);
       const meta = document.createElement("div");
       meta.className = "lodging__meta";
       meta.textContent = l.barangay + " \u00B7 " + l.type;
@@ -37,8 +41,9 @@
       go.setAttribute("aria-hidden", "true");
       go.textContent = "\u2192";
 
-      a.append(photo, text, go);
-      list.appendChild(a);
+      row.append(photo, text, go);
+      if (window.Trip) row.appendChild(window.Trip.button(l.id, l.name));
+      list.appendChild(row);
     });
   }
 
