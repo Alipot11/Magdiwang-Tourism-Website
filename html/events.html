@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style/index.css">
   <link rel="stylesheet" href="../style/events.css">
+  <link rel="stylesheet" href="../style/countdown.css">
 </head>
 <body>
 
@@ -63,6 +64,11 @@
           <span class="pillbox" id="feat-when"></span>
           <h2 id="feat-name"></h2>
           <p id="feat-where"></p>
+          <div class="cd" id="feat-count" hidden>
+            <div class="cd__label" id="cd-label"></div>
+            <div class="cd__big" id="cd-big"></div>
+            <div class="cd__unit" id="cd-unit"></div>
+          </div>
         </div>
       </div>
       <div class="wrap feat__grid">
@@ -149,5 +155,6 @@
   <script src="../js/trip.js"></script>
   <script src="../js/main.js"></script>
   <script src="../js/events.js"></script>
+  <script src="../js/countdown.js"></script>
 </body>
 </html>
