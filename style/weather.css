@@ -10,6 +10,7 @@
 .wx__place:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
 
 .weather__grid { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 24px; margin-top: 28px; align-items: start; }
+.weather__grid > * { min-width: 0; }
 
 /* "Now" card: navy, or a photo with a dark overlay when data/weather.js sets an image */
 .wx__now { background: var(--navy) center / cover no-repeat; color: #fff; border-radius: var(--radius); padding: 28px; box-shadow: 0 6px 18px rgba(15,23,42,.18); }
@@ -37,7 +38,7 @@
 .wx__meta a { text-decoration: underline; }
 
 @media (max-width: 900px) {
-  .weather__grid { grid-template-columns: 1fr; }
+  .weather__grid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 720px) {
   .weather { padding: 48px 0 56px; }

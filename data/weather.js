@@ -4,6 +4,11 @@
 // places: barangay ids from data/spots.js. The first one shows by default.
 // ferryTitle / ferryNote: the short note under the forecast (leave both "" to hide it).
 window.WEATHER = {
+  images: {
+    poblacion: "assets/homepage/weather.webp",
+    agutay: "assets/homepage/weather-2.webp",
+    // silum: ""
+  },
   image: "",
   places: ["poblacion", "agutay", "silum"],
   ferryTitle: "Traveling by sea?",
