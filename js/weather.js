@@ -57,12 +57,17 @@
   const FRESH = 30 * 60 * 1000; // reuse a saved forecast for 30 minutes
   let current = places[0];
 
-  if (cfg.image) { // photo background if it loads, otherwise the card stays navy
+  // Background photo for the Now card: the barangay's own image, else the shared one, else plain navy
+  function setPhoto(p) {
+    const src = (cfg.images && cfg.images[p.id]) || cfg.image || "";
+    now.style.backgroundImage = "";
+    if (!src) return;
     const im = new Image();
     im.onload = () => {
-      now.style.backgroundImage = "linear-gradient(rgba(15,23,42,.5), rgba(15,23,42,.82)), url('" + cfg.image + "')";
+      if (current !== p) return; // visitor already switched to another barangay
+      now.style.backgroundImage = "linear-gradient(rgba(15,23,42,.5), rgba(15,23,42,.82)), url('" + src + "')";
     };
-    im.src = cfg.image;
+    im.src = src;
   }
   if (cfg.ferryNote) {
     const f = $("wx-ferry");
@@ -81,6 +86,7 @@
 
   function choose(p) {
     current = p;
+    setPhoto(p);
     pills.forEach((b, n) => b.setAttribute("aria-pressed", String(places[n] === p)));
     load(p);
   }
