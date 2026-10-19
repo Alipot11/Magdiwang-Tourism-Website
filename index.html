@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="style/index.css">
   <link rel="stylesheet" href="style/map.css">
   <link rel="stylesheet" href="style/weather.css">
+  <link rel="stylesheet" href="style/countdown.css">
 </head>
 <body>
  
@@ -58,6 +59,14 @@
         </div>
       </div>
       <div class="hero__dots" id="dots" role="group" aria-label="Choose a photo"></div>
+    </section>
+
+    <section class="cdbar" id="cdbar" aria-label="Coming up" hidden>
+      <div class="wrap cdbar__in">
+        <span class="cdbar__label">COMING UP</span>
+        <ul class="cdbar__list" id="cdbar-list"></ul>
+        <a class="cdbar__more" href="html/events.html#calendar">See calendar &rarr;</a>
+      </div>
     </section>
 
     <section class="updates" id="updates" aria-label="Latest updates">
@@ -292,6 +301,8 @@
   </footer>
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="data/events.js"></script>
+  <script src="js/countdown.js"></script>
   <script src="js/trip.js"></script>
   <script src="data/updates.js"></script>
   <script src="js/home.js"></script>

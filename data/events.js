@@ -39,8 +39,8 @@ window.CALENDAR = [
   { month: "July",     name: "",     barangay: "" },
   { month: "August",     name: "Gulayan Festival",     barangay: "Agsao" },
   { month: "September",     name: "",     barangay: "" },
-  { month: "October",     name: "Duyang Fiesta",     barangay: "Dulangan" },
-  { month: "October",     name: "Hinugyaw Fiesta",     barangay: "Poblacion" },
+  { month: "October",     name: "Duyang Festival",     barangay: "Dulangan" },
+  { month: "October",     name: "Hinugyaw Festival",     barangay: "Poblacion" },
   { month: "November",     name: "Tampayan Fiesta",     barangay: "Tampayan" },
   { month: "December",     name: "Pahayag",     barangay: "Poblacion" },
   { month: "December",     name: "Silum Fiesta",     barangay: "Silum" }
