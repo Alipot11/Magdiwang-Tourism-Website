@@ -1,0 +1,27 @@
+/* Photo lightbox (loaded by js/lightbox.js). Uses the variables from index.css. */
+.lb-tile { cursor: zoom-in; }
+.lb-tile:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+
+.lb[hidden] { display: none; }
+.lb { position: fixed; inset: 0; z-index: 100; background: rgba(8,12,22,.94); color: #fff;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 20px; }
+.lb__fig { margin: 0; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.lb__img { max-width: 100%; max-height: calc(100vh - 150px); max-height: calc(100dvh - 150px); object-fit: contain; border-radius: 4px; background: #1e293b; }
+.lb__cap { margin-top: 14px; text-align: center; display: grid; gap: 2px; justify-items: center; }
+.lb__text { font-weight: 500; }
+.lb__credit { font-size: .8rem; opacity: .75; }
+.lb__count { font-size: .85rem; opacity: .7; }
+.lb__text:empty, .lb__credit:empty, .lb__count:empty { display: none; }
+
+.lb__btn { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.7); background: rgba(15,23,42,.6); color: #fff; font-size: 1.2rem; line-height: 1; cursor: pointer; }
+.lb__btn:hover { background: #fff; color: var(--navy); }
+.lb__btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.lb__btn[hidden] { display: none; }
+.lb__close { position: absolute; top: calc(16px + env(safe-area-inset-top, 0px)); right: 16px; z-index: 2; font-size: 1.6rem; }
+
+@media (max-width: 720px) {
+  .lb { grid-template-columns: 1fr; padding: 16px 12px calc(84px + env(safe-area-inset-bottom, 0px)); }
+  .lb__prev, .lb__next { position: absolute; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .lb__prev { left: calc(50% - 60px); }
+  .lb__next { left: calc(50% + 12px); }
+}
