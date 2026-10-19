@@ -28,5 +28,8 @@ window.SPOTS = [
   { id: "s8", name: "Sanctuary Garden Resort", barangay: "tampayan", saveAs: "l1", category: "Lodging",    lat: 12.490146209549602, lng: 122.53547294598968, desc: "Stay in a relaxing lodging", image: "assets/spots/tampayan/lodging.webp" },
   { id: "s9", name: "Cataja Falls", barangay: "jao-asan",  category: "Nature",    lat: 12.461586752198, lng: 122.5050080329111, desc: "[insert description]", image: "assets/spots/jao-asan/cataja.webp" },
   { id: "s10", name: "Dalipi River", barangay: "tampayan",  category: "Nature",    lat: 12.484356299547196, lng: 122.53857329010299, desc: "[insert description]", image: "assets/spots/tampayan/dalipi.webp" },
-  { id: "s11", name: "Lambingan Falls", barangay: "silum",  category: "Nature",    lat: 12.49210365252721, lng: 122.5783351415361, desc: "[insert description]", image: "assets/spots/silum/lambingan.webp" }
+  { id: "s11", name: "Lambingan Falls", barangay: "silum",  category: "Nature",    lat: 12.49210365252721, lng: 122.5783351415361, desc: "[insert description]", image: "assets/spots/silum/lambingan.webp" },
+  { id: "s12", name: "La Fortuna Hotel", barangay: "poblacion", saveAs: "l2", category: "Lodging",    lat: 12.494293250338623,  lng: 122.5081806539655, desc: "[insert description]", image: "assets/spots/poblacion/lodging-2.webp" },
+  { id: "s13", name: "The Grandview Hotel", barangay: "poblacion", saveAs: "l3", category: "Lodging",    lat: 12.493819362397742,  lng: 122.50970918320476, desc: "[insert description]", image: "assets/spots/poblacion/lodging-3.webp" },
+  { id: "s14", name: "Island Sips", barangay: "poblacion", category: "Foods",    lat: 12.491791665616464,  lng: 122.51299625650995, desc: "Smile in every cup", image: "assets/spots/poblacion/island-sips.webp" }
 ];
