@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Where to Stay | Magdiwang Tourism Office</title>
+  <meta name="description" content="Place to stay in Magdiwang, Sibuyan Island, Romblon.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" type="image/x-icon" href="../assets/tourism-logo.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/lodging-detail.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__logos" href="../index.html" aria-label="Magdiwang Tourism home">
+      <img src="../assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="../assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+      <h1>MAGDIWANG</h1>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+      <a href="explore.html">Explore</a>
+      <a href="nature.html">Nature & Wildlife</a>
+      <a href="lodging.html" aria-current="page">Where to Stay</a>
+      <a href="coming-soon.html">Where to Eat</a>
+      <a href="activities.html">Things to Do</a>
+      <a href="events.html">Festivals & Events</a>
+      <a href="coming-soon.html">Culture & Heritage</a>
+      <a href="install.html">Get the app</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="ldhero" aria-label="Photo of this place to stay">
+      <div class="ldhero__img" id="l-hero"></div>
+      <div class="ldhero__text">
+        <p class="ldhero__eyebrow" id="l-type"></p>
+        <h1 id="l-name"></h1>
+        <p id="l-place"></p>
+      </div>
+    </section>
+
+    <div class="ldsub">
+      <div class="wrap ldsub__in" id="subnav">
+        <a class="ldsub__map" id="l-map-link" href="../index.html?cat=Lodging#map-section">Show on map</a>
+      </div>
+    </div>
+
+    <section class="ldabout" id="about" aria-labelledby="about-title">
+      <div class="wrap ldabout__grid">
+        <div>
+          <h2 id="about-title">About this place</h2>
+          <p class="ldabout__desc" id="l-desc"></p>
+        </div>
+        <dl class="ldabout__facts" id="l-facts"></dl>
+      </div>
+    </section>
+
+    <section class="ldrooms" id="rooms" aria-labelledby="rooms-title" hidden>
+      <div class="wrap">
+        <h2 id="rooms-title">Rooms</h2>
+        <div id="l-rooms"></div>
+        <ul class="ldrooms__amen" id="l-amen"></ul>
+      </div>
+    </section>
+
+    <section class="ldph" id="photos" aria-labelledby="photos-title" hidden>
+      <div class="wrap">
+        <h2 id="photos-title">Photos</h2>
+        <div class="ldph__stage">
+          <button type="button" class="ldph__btn ldph__btn--prev" id="prev" aria-label="Previous photos">&#8592;</button>
+          <div class="ldph__view" id="pview" tabindex="0" aria-label="Photos, use the arrows to slide">
+            <div class="ldph__track" id="ptrack"></div>
+          </div>
+          <button type="button" class="ldph__btn ldph__btn--next" id="next" aria-label="Next photos">&#8594;</button>
+        </div>
+        <div class="ldph__dots" id="pdots" role="group" aria-label="Choose a slide"></div>
+      </div>
+    </section>
+
+    <section class="ldcon" id="contact-info" aria-labelledby="contact-title">
+      <div class="wrap ldcon__grid">
+        <div>
+          <h2 id="contact-title">For more details please visit the links below</h2>
+          <ul class="ldcon__list" id="l-contact"></ul>
+          <a class="ldcon__back" href="lodging.html">&larr; All places to stay</a>
+        </div>
+        <div class="ldcon__map" id="minimap" role="img" aria-label="Map showing this place" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="../assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone: 09984555038</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="nature.html">Nature & Wildlife</a>
+        <a href="lodging.html">Where to Stay</a>
+        <a href="coming-soon.html">Where to eat</a>
+        <a href="activities.html">Things to Do</a>
+        <a href="events.html">Festivals & Events</a>
+        <a href="coming-soon.html">Culture & Heritage</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="../index.html#about">About</a>
+        <a href="install.html">Get the app</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="https://www.facebook.com/profile.php?id=61583923357666">Facebook</a></span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="../data/spots.js"></script>
+  <script src="../data/lodging.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/lodging-detail.js"></script>
+</body>
+</html>
