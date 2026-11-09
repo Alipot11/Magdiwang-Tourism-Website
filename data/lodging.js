@@ -1,5 +1,5 @@
 // ===== EDIT THIS FILE to add or change places to stay =====
-// type must be one of: Resort, Inn, Homestay, Hotel
+// type must be one of: Resort, Inn, Homestay, Hotel, Lodge
 // image: put the photo in assets/ (a plain grey box shows if it is missing)
 window.LODGING = [
   { 
@@ -16,10 +16,10 @@ window.LODGING = [
       { name: "Private Room", bedrooms: 1, sleeps: "2 adults | 1 double beds", note: "Air-conditioned", image: "assets/lodging/sc/sc-room-3.webp" },
       { name: "Family Room", bedrooms: 1, sleeps: "6 adults | 2 single & 4 bunk beds", note: "Air-conditioned", image: "assets/lodging/sc/sc-room-4.webp" },
       { name: "Triple Room", bedrooms: 1, sleeps: "3 adults | 1 single & 4 bunk beds", note: "Air-conditioned | Shared bathroom", image: "assets/lodging/sc/sc-room-5.webp" },
-      { name: "Standard room", bedrooms: 1, sleeps: "3 adults | 1 single & 2 bunk beds", note: "Non Air-conditioned | Shared bathroom", image: "assets/lodging/room-1.webp" },
-      { name: "Budget Room", bedrooms: 1, sleeps: "2 adults | 1 double bed", note: "Air-conditioned", image: "assets/lodging/room-1.webp" },
-      { name: "Executive Room - Accessible", bedrooms: 1, sleeps: "2 adults | 1 single & 1 queen bed", note: "Air-conditioned", image: "assets/lodging/room-1.webp" },
-      { name: "Private Dormitory Room", bedrooms: 1, sleeps: "5 adults | No specified bed", note: "Air-conditioned", image: "assets/lodging/room-1.webp" }
+      { name: "Standard room", bedrooms: 1, sleeps: "3 adults | 1 single & 2 bunk beds", note: "Non Air-conditioned | Shared bathroom", image: "assets/lodging/sc/sc-room-6.webp" },
+      { name: "Budget Room", bedrooms: 1, sleeps: "2 adults | 1 double bed", note: "Air-conditioned", image: "assets/lodging/sc/sc-room-7.webp" },
+      { name: "Executive Room - Accessible", bedrooms: 1, sleeps: "2 adults | 1 single & 1 queen bed", note: "Air-conditioned", image: "assets/lodging/sc/sc-room-8.webp" },
+      { name: "Private Dormitory Room", bedrooms: 1, sleeps: "5 adults | No specified bed", note: "Air-conditioned", image: "assets/lodging/sc/sc-room-9.webp" }
      ],
     amenities: ["Wi-Fi", "Pool", "Parking"],
     images: [
@@ -38,10 +38,13 @@ window.LODGING = [
       {image: "assets/lodging/sc/tri-room-1.webp", name: "Triple room"},
       {image: "assets/lodging/sc/tri-room-2.webp", name: "Triple room"},
       {image: "assets/lodging/sc/tri-room-3.webp", name: "Triple room"},
-      {image: "assets/lodging/sc/fam-room-1.webp", name: "Family room"},
-      {image: "assets/lodging/sc/fam-room-1.webp", name: "Family room"},
-      {image: "assets/lodging/sc/fam-room-1.webp", name: "Family room"},
-      {image: "assets/lodging/sc/fam-room-1.webp", name: "Family room"}
+      {image: "assets/lodging/sc/stan-room-1.webp", name: "Standard room"},
+      {image: "assets/lodging/sc/stan-room-2.webp", name: "Standard room"},
+      {image: "assets/lodging/sc/stan-room-3.webp", name: "Standard room"},
+      {image: "assets/lodging/sc/bud-room-1.webp", name: "Budget room"},
+      {image: "assets/lodging/sc/bud-room-2.webp", name: "Budget room"},
+      {image: "assets/lodging/sc/acc-room-1.webp", name: "Executive room - Accessible"},
+      {image: "assets/lodging/sc/pri-room-1.webp", name: "Private dormitory room"}
     ],
     phone: "0939 917 1635",
     gmail: "eamayor82461@gmail.com",
@@ -54,12 +57,26 @@ window.LODGING = [
     barangay: "Poblacion", type: "Hotel",   image: "assets/lodging/lodging-2.webp" ,
     page: "lodging-detail.html?id=l2",
     hero: "",
-    aboutImage: "assets/lodging/lodging-about-2.webp",
-    desc: "Three or four lines about the place.",
+    aboutImage: "assets/lodging/lfh/about.webp",
+    desc: "We are 1 minute walk to the fine sand, beach of Magdiwang, Romblon. Our guests love the cozy, home-like atmosphere of our small island hotel. Celebrate the holidays surrounded by family, friends, and island charm! Book your stay with us and experience the true spirit of Holidays.",
     checkIn: "2:00 pm", checkOut: "12:00 nn",
-    rooms: [ { name: "Garden Room", sleeps: 2, note: "Fan", image: "assets/lodging/room-1.webp" } ],
-    amenities: ["Wi-Fi", "Pool", "Parking"],
-    images: ["assets/lodging/l2-1.webp", "assets/lodging/l2-2.webp", "assets/lodging/l2-3.webp"],
+    rooms: [ 
+      { name: "Room 1", note: "Air-conditioned", image: "assets/lodging/lfh/room-1.webp" },
+      { name: "Room 2", note: "Air-conditioned", image: "assets/lodging/lfh/room-2.webp" },
+      { name: "Room 3", note: "Air-conditioned", image: "assets/lodging/lfh/room-3.webp" },
+     ],
+    amenities: ["Wi-Fi", "Balcony", "Water Heater", "Parking"],
+    images: [
+      {image: "assets/lodging/lfh/lfh-room-1.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-2.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-3.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-4.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-5.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-6.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-7.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-8.webp", name: ""},
+      {image: "assets/lodging/lfh/lfh-room-9.webp", name: ""},
+    ],
     phone: "",
     gmail: "lafortuna5511@gmail.com",
     facebook: "https://www.facebook.com/profile.php?id=61555392563581",
@@ -86,12 +103,28 @@ window.LODGING = [
     barangay: "Tampayan", type: "Resort",   image: "assets/lodging/lodging-4.webp",
     page: "lodging-detail.html?id=l4",
     hero: "",
-    aboutImage: "assets/lodging/lodging-about.webp",
-    desc: "Three or four lines about the place.",
+    aboutImage: "assets/lodging/rh/about.webp",
+    desc: "A resort deep in the heart of barangay Tampayan. Several pools and entertainment available to visitors. Enjoy a relaxing stay with friends and families.",
     checkIn: "2:00 pm", checkOut: "12:00 nn",
-    rooms: [ { name: "Garden Room", sleeps: 2, note: "Fan", image: "assets/lodging/room-1.webp" } ],
-    amenities: ["Wi-Fi", "Pool", "Parking"],
-    images: ["assets/lodging/l1-1.webp", "assets/lodging/l1-2.webp", "assets/lodging/l1-3.webp"],
+    rooms: [
+      { name: "Haven 1", note: "Air-conditioned | 2 Rooms", image: "assets/lodging/rh/haven-1.webp" },
+      { name: "Haven 2", note: "Air-conditioned | 4 Rooms", image: "assets/lodging/rh/haven-2.webp" },
+      { name: "Haven 3", note: "Air-conditioned | 2 Dorm-type rooms", image: "assets/lodging/rh/haven-3.webp" },
+      { name: "Haven 4", note: "Air-conditioned", image: "assets/lodging/rh/haven-4.webp" },
+      { name: "Cottage", note: "Fan", image: "assets/lodging/rh/cottage.webp" } 
+    ],
+    amenities: ["Wi-Fi", "Pool", "Pickle ball", "Videoke","Parking"],
+    images: [
+      {image: "assets/lodging/rh/rh-room-1.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-2.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-3.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-4.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-5.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-6.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-7.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-8.webp", name: ""},
+      {image: "assets/lodging/rh/rh-room-9.webp", name: ""}
+    ],
     phone: "",
     gmail: "ranceshaven@gmail.com",
     facebook: "https://www.facebook.com/ranceshaven",
@@ -102,18 +135,40 @@ window.LODGING = [
     barangay: "Poblacion", type: "Inn",   image: "assets/lodging/lodging-5.webp",
     page: "lodging-detail.html?id=l5",
     hero: "",
-    aboutImage: "assets/lodging/lodging-about.webp",
-    desc: "Three or four lines about the place.",
+    aboutImage: "assets/lodging/ar/about.webp",
+    desc: "",
     checkIn: "2:00 pm", checkOut: "12:00 nn",
-    rooms: [ { name: "Garden Room", sleeps: 2, note: "Fan", image: "assets/lodging/room-1.webp" } ],
-    amenities: ["Wi-Fi", "Pool", "Parking"],
-    images: ["assets/lodging/l1-1.webp", "assets/lodging/l1-2.webp", "assets/lodging/l1-3.webp"],
+    rooms: [
+      { name: "Solo room", note: "Air-conditioned or Non-aircon", image: "assets/lodging/ar/ar-room-1.webp" },
+      { name: "Barkada room", note: "Air-conditioned | 6 Beds", image: "assets/lodging/ar/ar-room-1.webp" },
+      { name: "Room with pool", note: "1 double-bed + 2 bunk-beds", image: "assets/lodging/ar/ar-room-1.webp" },
+      { name: "Family room", note: "1 king bed + 2 bunk beds | Kitchen | CR", image: "assets/lodging/ar/ar-room-1.webp" },
+      { name: "Deluxe room", note: "1 kind bed + 1 single bed", image: "assets/lodging/ar/ar-room-1.webp" },
+      { name: "Standard room", note: "Air-conditioned or Non-aircon", image: "assets/lodging/ar/ar-room-1.webp" },
+      { name: "Annex / Apartment room", note: "Apartment style room", image: "assets/lodging/ar/ar-room-1.webp" }
+    ],
+    amenities: ["Wi-Fi", "Pool", "Parking", "Kitchen"],
+    images: [
+      {image: "assets/lodging/ar/ar-room-1.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-2.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-3.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-4.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-5.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-6.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-7.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-8.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-9.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-10.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-11.webp", name: ""},
+      {image: "assets/lodging/ar/ar-room-12.webp", name: ""},
+    ],
     phone: "0949 350 0608 / 0908 816 5917",
     gmail: "alertaernestojr@yahoo.com", 
     facebook: "https://www.facebook.com/sibuyanlodge",
     spot: "s17"
   },
 
+/*
   { id: "l6", name: "Bagumbayan Beach House", 
     barangay: "Poblacion", type: "Inn",   image: "assets/lodging/lodging-6.webp", 
     page: "lodging-detail.html?id=l6",
@@ -129,6 +184,7 @@ window.LODGING = [
     facebook: "",
     spot: "s8"
   },
+*/
 
   { id: "l7", name: "Dangkalan Beach Resort",
     barangay: "Silum", type: "Resort",   image: "assets/lodging/lodging-7.webp",
