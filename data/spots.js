@@ -33,5 +33,13 @@ window.SPOTS = [
   { id: "s13", name: "The Grandview Hotel", barangay: "poblacion", saveAs: "l3", category: "Lodging", lat: 12.493819362397742,  lng: 122.50970918320476, desc: "", image: "assets/spots/poblacion/lodging-3.webp" },
   { id: "s14", name: "Island Sips", barangay: "poblacion", category: "Foods", lat: 12.491791665616464, lng: 122.51299625650995, desc: "Smile in every cup", image: "assets/spots/poblacion/island-sips.webp" },
   { id: "s15", name: "Rance's Haven", barangay: "tampayan", saveAs: "l4", category: "Lodging", lat: 12.475708372752853,  lng: 122.53653357622457, desc: "", image: "assets/spots/tampayan/lodging-4.webp" },
-  { id: "s16", name: "Rance's Haven", barangay: "tampayan", category: "Activities",    lat: 12.475708372752853,  lng: 122.53653357622457, desc: "", image: "assets/spots/tampayan/swim.webp" }
+  { id: "s16", name: "Rance's Haven", barangay: "tampayan", category: "Activities",    lat: 12.475708372752853,  lng: 122.53653357622457, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s17", name: "Alerta Rooftop lodge", barangay: "poblacion", category: "Lodging",    lat: 12.49230395152224,  lng:  122.5131952160889, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s18", name: "Bagumbayan Beach House", barangay: "poblacion", category: "Lodging",    lat: 12.493758689200169,  lng: 122.50978275008765, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s19", name: "Dangkalan Beach Resort", barangay: "silum", category: "Lodging",    lat: 12.497436886520472,  lng: 122.56741263340696,  desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s20", name: "Muy Bien Mountain Resort", barangay: "tampayan", category: "Lodging",    lat: 12.46978515465493,  lng: 122.54022675296942, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s21", name: "Nature's View Lodge", barangay: "poblacion", category: "Lodging",    lat: 12.491698213847707,  lng: 122.51515197612183, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s22", name: "Paradisso Terrenal", barangay: "ambulong", category: "Lodging",    lat: 12.496225417138723,  lng: 122.49876143995691, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s23", name: "Ranchers Travels and Tours", barangay: "poblacion", category: "Lodging",    lat: 12.490563106769516,  lng: 122.51472679587796, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s24", name: "Vhora Resort and Restaurant", barangay: "silum", category: "Lodging",    lat: 12.489472109865885,  lng: 122.59574735964492, desc: "", image: "assets/spots/tampayan/swim.webp" }
 ];
