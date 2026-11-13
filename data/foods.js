@@ -22,7 +22,7 @@ window.RESTAURANTS = [
   { id: "r1", name: "Baldwin cafe & resto", barangay: "Poblacion", cuisine: "",
     blurb: "Try Baldwin's wide range of dishes or taste a sip with thier drinks", image: "assets/foods/baldwin/baldwin.webp",
     heroImages: [],
-    about: "Enjoy a relaxing vibe of Sibuyan while eating with families and friends",
+    about: "Enjoy the relaxing vibe of Sibuyan while eating with families and friends. Choose from a wide range of food and find the taste that best suits you.",
     hours: "Mon - Sat: 11am to 8pm | Sun: 11am to 7pm",
     phone: "0921 581 8670", gmail: "", facebook: "https://www.facebook.com/baldwinsbaken.brew", website: "",
     aboutImage: "assets/foods/baldwin/about.webp",   // optional photo behind the About section, e.g. "assets/foods/r1/about.webp"
