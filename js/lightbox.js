@@ -19,6 +19,9 @@
     { sel: ".coast__photo", scope: ".coast__row", info: el => ({ caption: text(el.closest(".coast__row").querySelector(".coast__name")) }) },
     { sel: ".dishes__tile", info: el => ({ caption: el.dataset.lbLabel === "Local dish" ? "" : el.dataset.lbLabel || "" }) },
     { sel: ".cafe__photo", scope: ".cafe", info: el => ({ caption: text(el.closest(".cafe").querySelector(".cafe__name")) }) },
+    { sel: ".rsig__photo", info: () => ({ caption: text(document.getElementById("r-sig-name")) }) },
+    { sel: ".rdish__tile", scope: ".rdish__desk", info: el => ({ caption: text(el.querySelector("span")) }) },
+    { sel: ".rdish__card", scope: ".rdish__mob", info: el => ({ caption: text(el.querySelector("span")) }) },
     { sel: ".kayak__photos div", info: () => ({ caption: text(document.getElementById("kayak-title")) }) },
     { sel: ".swim__photo", info: el => ({ caption: el.dataset.lbLabel || "" }) },
     { sel: ".sp__photo", info: el => {
@@ -26,7 +29,7 @@
         return { caption: text(card.querySelector(".sp__name")), credit: text(card.querySelector(".sp__credit")) };
       } }
   ];
-  const SCROLLERS = ".falls__view, .mom__view, .coast__view, .cafe__strip";
+  const SCROLLERS = ".falls__view, .mom__view, .coast__view, .cafe__strip, .rdish__view, .rdish__strip";
 
   function urlOf(el) {
     const m = /url\(["']?(.*?)["']?\)/.exec(getComputedStyle(el).backgroundImage);

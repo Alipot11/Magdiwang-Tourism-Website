@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Restaurant | Magdiwang Tourism Office</title>
+  <meta name="description" content="A restaurant in Magdiwang, Sibuyan Island, Romblon.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" type="image/x-icon" href="../assets/tourism-logo.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="stylesheet" href="../style/restaurant-detail.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="nav__logos" href="../index.html" aria-label="Magdiwang Tourism home">
+      <img src="../assets/Magdiwang-seal.png" alt="Municipality of Magdiwang seal">
+      <img src="../assets/tourism-logo.png" alt="Magdiwang Tourism logo">
+      <h1>MAGDIWANG</h1>
+    </a>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <nav class="nav__links" id="menu">
+      <a href="explore.html">Explore</a>
+      <a href="nature.html">Nature & Wildlife</a>
+      <a href="lodging.html">Where to Stay</a>
+      <a href="foods.html" aria-current="page">Where to Eat</a>
+      <a href="activities.html">Things to Do</a>
+      <a href="events.html">Festivals & Events</a>
+      <a href="culture.html">Culture & Heritage</a>
+      <a href="install.html">Get the app</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="rpage">
+      <section class="rhero" aria-label="Photos of the restaurant">
+        <div class="rhero__track" id="slides"></div>
+        <div class="rhero__text">
+          <p class="rhero__eyebrow">RESTAURANT</p>
+          <h1 id="r-name">Restaurant</h1>
+          <p id="r-meta"></p>
+        </div>
+      </section>
+
+            <div class="rsub">
+        <div class="wrap rsub__in" id="subnav">
+          <a class="rsub__map" id="r-map-link" href="../index.html?cat=Foods#map-section">Show on map</a>
+        </div>
+      </div>
+
+      <section class="rabout" id="about" aria-labelledby="about-title">
+        <div class="wrap rabout__grid">
+          <div>
+            <h2 id="about-title">About</h2>
+            <p class="rabout__text" id="r-about"></p>
+          </div>
+          <dl class="rfacts" id="r-facts"></dl>
+        </div>
+      </section>
+
+      <section class="rabout" id="about">
+        <div class="wrap rabout__grid">
+          <p class="rabout__text" id="r-about"></p>
+          <dl class="rfacts" id="r-facts"></dl>
+        </div>
+      </section>
+
+      <section class="rkit" id="kitchen">
+        <div class="wrap">
+          <h2>From the kitchen</h2>
+          <p class="lead">The dishes this place is known for</p>
+
+          <div class="rsig" id="r-sig">
+            <div class="rsig__photo" id="r-sig-photo" role="img" aria-label="Signature dish"></div>
+            <div>
+              <p class="rsig__tag">TRY NOW</p>
+              <h3 class="rsig__name" id="r-sig-name"></h3>
+              <p class="rsig__desc" id="r-sig-desc"></p>
+            </div>
+          </div>
+
+          <div id="r-dishes">
+            <!-- Desktop and tablet: 5 dishes per slide -->
+            <div class="rdish__desk">
+              <button type="button" class="rdish__btn rdish__btn--prev" id="dprev" aria-label="Previous dishes">&#8592;</button>
+              <div class="rdish__view" id="dview" tabindex="0" aria-label="Dishes, use the arrows to slide">
+                <div class="rdish__track" id="dtrack"></div>
+              </div>
+              <button type="button" class="rdish__btn rdish__btn--next" id="dnext" aria-label="Next dishes">&#8594;</button>
+              <div class="rdish__dots" id="ddots" role="group" aria-label="Choose a slide"></div>
+            </div>
+            <!-- Phones: swipe one dish at a time -->
+            <div class="rdish__mob">
+              <div class="rdish__strip" id="mstrip" tabindex="0" aria-label="Dishes, swipe to see more"></div>
+              <div class="rdish__dots rdish__mdots" id="mdots" role="group" aria-label="Choose a dish"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rcon" id="contact-info" aria-labelledby="contact-title">
+        <div class="wrap rcon__grid">
+          <div>
+            <h2 id="contact-title">For more details please visit the links below</h2>
+            <ul class="rcon__list" id="r-contact"></ul>
+            <a class="rcon__back" href="foods.html">&larr; All places to eat</a>
+          </div>
+          <div class="rcon__map" id="minimap" role="img" aria-label="Map showing this restaurant" hidden></div>
+        </div>
+      </section>
+
+    <section class="wrap rmissing" id="rmissing" hidden>
+      <h2>Restaurant not found</h2>
+      <p><a href="foods.html">&larr; Back to Where to Eat</a></p>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="wrap footer__grid">
+      <div class="footer__office">
+        <div class="footer__brand">
+          <img src="../assets/tourism-logo.png" alt="">
+          <strong>MAGDIWANG TOURISM OFFICE</strong>
+        </div>
+        <p>Magdiwang Municipal Hall<br>Poblacion Magdiwang Romblon<br>Magdiwang 5511, Philippines</p>
+        <p class="footer__contact"><b>Telephone: 09984555038</b></p>
+        <p class="footer__contact"><b>Email:</b><br><b>Office Hours:</b> Mon - Fri, 8:00am - 5:00pm</p>
+      </div>
+      <div class="footer__col">
+        <h4>DISCOVER</h4>
+        <a href="nature.html">Nature & Wildlife</a>
+        <a href="lodging.html">Where to Stay</a>
+        <a href="foods.html">Where to eat</a>
+        <a href="activities.html">Things to Do</a>
+        <a href="events.html">Festivals & Events</a>
+        <a href="culture.html">Culture & Heritage</a>
+      </div>
+      <div class="footer__col">
+        <h4>MAGDIWANG</h4>
+        <a href="../index.html#about">About</a>
+        <a href="install.html">Get the app</a>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <span>&copy; <span id="year">2026</span> MAGDIWANG TOURISM OFFICE. ALL RIGHTS RESERVED.</span>
+      <span class="footer__social"><a href="https://www.facebook.com/profile.php?id=61583923357666">Facebook</a></span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="../data/spots.js"></script>
+  <script src="../data/foods.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/restaurant-detail.js"></script>
+  <script src="../js/lightbox.js"></script>
+</body>
+</html>

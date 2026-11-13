@@ -1,0 +1,116 @@
+/* Restaurant detail page: builds on index.css (nav, footer, variables) */
+[hidden] { display: none !important; }
+.nav__links a[aria-current="page"] { opacity: 1; border-bottom: 2px solid #fff; padding-bottom: 2px; }
+h2 { font-size: 2.4rem; font-weight: 700; }
+h3 { font-weight: 600; }
+.lead { color: var(--muted); margin: 6px 0 32px; }
+
+/* Hero (slides horizontally when there is more than one photo) */
+.rhero { position: relative; min-height: 70vh; overflow: hidden; color: #fff; display: grid; align-items: end; background: var(--navy); }
+.rhero__track { position: absolute; inset: 0; display: flex; transition: transform .8s ease; }
+.rhero__slide { flex: 0 0 100%; background: #1e293b center / cover no-repeat; }
+.rhero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(15,23,42,.8), rgba(15,23,42,.25) 65%); }
+.rhero__text { position: relative; z-index: 2; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 24px 72px; }
+.rhero__eyebrow { font-size: .8rem; letter-spacing: .14em; font-weight: 500; opacity: .9; }
+.rhero__text h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 600; margin-top: 6px; line-height: 1.05; }
+.rhero__text p:last-child { margin-top: 8px; font-size: 1.1rem; opacity: .92; }
+
+section[id] { scroll-margin-top: 130px; }
+
+/* Sticky section bar */
+.rsub { position: sticky; top: 72px; z-index: 40; background: #fff; border-bottom: 1px solid #dde4ee; }
+.rsub__in { display: flex; gap: 36px; align-items: center; overflow-x: auto; }
+.rsub__in a { padding: 20px 0; font-size: .95rem; color: var(--muted); border-bottom: 2px solid transparent; white-space: nowrap; }
+.rsub__in a.on { color: var(--text); border-bottom-color: var(--navy); font-weight: 500; }
+.rsub__map { margin-left: auto; color: var(--text) !important; font-weight: 500; }
+.rsub__map:hover { text-decoration: underline; }
+
+/* About: white by default, photo background when .has-img is set */
+.rabout { position: relative; padding: 80px 0; }
+.rabout h2 { margin-bottom: 16px; }
+.rabout.has-img { background: var(--navy) center / cover no-repeat; color: #fff; }
+.rabout.has-img::before { content: ""; position: absolute; inset: 0; background: rgba(15,23,42,.62); }
+.rabout.has-img .rfacts div { background: rgba(255,255,255,.16); }
+.rabout.has-img .rfacts dt { color: rgba(255,255,255,.8); }
+.rabout.has-img .rfacts a { color: #fff; }
+.rabout__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: start; }
+.rabout__text { font-size: 1.15rem; line-height: 1.7; max-width: 560px; }
+.rfacts { display: grid; gap: 10px; }
+.rfacts div { background: var(--bg-soft); border-radius: 8px; padding: 14px 18px; }
+.rfacts dt { font-size: .8rem; color: var(--muted); }
+.rfacts dd { font-size: 1.05rem; font-weight: 500; }
+.rfacts a { text-decoration: underline; }
+
+/* From the kitchen */
+.rkit { background: var(--bg-soft); padding: 80px 0 72px; }
+.rsig { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 48px; align-items: center; margin-bottom: 56px; }
+.rsig__photo { height: 420px; background: #dde4ee center / cover no-repeat; border-radius: 4px; }
+.rsig__tag { font-size: .75rem; letter-spacing: .14em; color: var(--muted); font-weight: 500; }
+.rsig__name { font-size: 2rem; margin: 6px 0 10px; line-height: 1.15; }
+.rsig__desc { color: var(--muted); line-height: 1.7; max-width: 440px; }
+
+/* Dishes: desktop slider (5 per slide: 1 tall + 4 small) */
+.rdish__desk { position: relative; }
+.rdish__view { overflow: hidden; }
+.rdish__view:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
+.rdish__track { display: flex; transition: transform .6s ease; touch-action: pan-y; }
+.rdish__slide { flex: 0 0 100%; display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 240px 240px; gap: 16px; }
+.rdish__tile, .rdish__card { position: relative; background: #dde4ee center / cover no-repeat; border-radius: 4px; overflow: hidden; min-height: 0; }
+.rdish__tile:first-child { grid-row: 1 / 3; }
+.rdish__tile span, .rdish__card span { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; color: #fff; font-weight: 500; background: linear-gradient(to top, rgba(15,23,42,.75), transparent); }
+.rdish__btn { position: absolute; top: 240px; transform: translateY(-50%); z-index: 2; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--navy); background: #fff; color: var(--navy); font-size: 1.2rem; cursor: pointer; }
+.rdish__btn:hover { background: var(--navy); color: #fff; }
+.rdish__btn:disabled { opacity: .35; cursor: default; background: #fff; color: var(--navy); }
+.rdish__btn--prev { left: -24px; }
+.rdish__btn--next { right: -24px; }
+.rdish__dots { display: flex; justify-content: center; gap: 10px; margin-top: 24px; }
+.rdish__dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1.5px solid var(--navy); background: transparent; cursor: pointer; }
+.rdish__dots button[aria-current="true"] { background: var(--navy); }
+
+/* Dishes: phone strip (hidden on desktop) */
+.rdish__mob { display: none; }
+.rdish__strip { position: relative; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; margin: 0 -24px; padding: 0 24px; scroll-padding-left: 24px; }
+.rdish__strip::-webkit-scrollbar { display: none; }
+.rdish__strip:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
+.rdish__card { flex: 0 0 72%; aspect-ratio: 4 / 5; scroll-snap-align: start; }
+
+/* Find us */
+/* Contact + mini map (same setup as the lodging pages) */
+.rcon { padding: 80px 0 88px; }
+.rcon__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.rcon h2 { margin-bottom: 20px; }
+.rcon__list { list-style: none; display: grid; gap: 10px; font-size: 1.05rem; }
+.rcon__list a { text-decoration: underline; }
+.rcon__list span { color: var(--muted); margin-right: 8px; }
+.rcon__back { display: inline-block; margin-top: 28px; font-weight: 500; }
+.rcon__back:hover { text-decoration: underline; }
+.rcon__map { height: 300px; border: 1px solid #dde4ee; border-radius: var(--radius); overflow: hidden; z-index: 0; }
+
+.rmissing { padding: 96px 24px; text-align: center; }
+.rmissing p { margin-top: 16px; }
+
+@media (max-width: 900px) {
+  .rabout__grid { grid-template-columns: 1fr; gap: 28px; }
+  .rsig { grid-template-columns: 1fr; gap: 24px; }
+  .rsig__photo { height: 320px; }
+  .rdish__btn--prev { left: 8px; }
+  .rdish__btn--next { right: 8px; }
+  .rdish__slide { grid-template-rows: 170px 170px; }
+  .rdish__btn { top: 170px; }
+  .rcon__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 720px) {
+  .rhero { min-height: 56vh; }
+  .rhero__text { padding-bottom: 48px; }
+  .rkit { padding: 56px 0; }
+  .rsig__photo { height: 240px; }
+  .rdish__desk { display: none; }
+  .rdish__mob { display: block; }
+  .rdish__mdots { margin-top: 16px; gap: 8px; }
+  .rdish__mdots button { width: 8px; height: 8px; }
+  h2 { font-size: 2rem; }
+  .rcon { padding: 56px 0; }
+  .rsub__in { gap: 24px; }
+  .rabout, .rcon { padding: 56px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .rhero__track, .rdish__track { transition: none; } }

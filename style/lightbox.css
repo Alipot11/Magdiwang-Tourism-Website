@@ -25,3 +25,8 @@
   .lb__prev { left: calc(50% - 60px); }
   .lb__next { left: calc(50% + 12px); }
 }
+
+/* Keep the focus ring visible inside sliders that clip their edges */
+.rdish__view .lb-tile:focus-visible,
+.rdish__strip .lb-tile:focus-visible,
+.cafe__strip .lb-tile:focus-visible { outline: 3px solid #fff; outline-offset: -6px; }
