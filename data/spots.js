@@ -41,5 +41,6 @@ window.SPOTS = [
   { id: "s21", name: "Nature's View Lodge", barangay: "poblacion", category: "Lodging",    lat: 12.491698213847707,  lng: 122.51515197612183, desc: "", image: "assets/spots/tampayan/swim.webp" },
   { id: "s22", name: "Paradisso Terrenal", barangay: "ambulong", category: "Lodging",    lat: 12.496225417138723,  lng: 122.49876143995691, desc: "", image: "assets/spots/tampayan/swim.webp" },
   { id: "s23", name: "Ranchers Travels and Tours", barangay: "poblacion", category: "Lodging",    lat: 12.490563106769516,  lng: 122.51472679587796, desc: "", image: "assets/spots/tampayan/swim.webp" },
-  { id: "s24", name: "Vhora Resort and Restaurant", barangay: "silum", category: "Lodging",    lat: 12.489472109865885,  lng: 122.59574735964492, desc: "", image: "assets/spots/tampayan/swim.webp" }
+  { id: "s24", name: "Vhora Resort and Restaurant", barangay: "silum", category: "Lodging",    lat: 12.489472109865885,  lng: 122.59574735964492, desc: "", image: "assets/spots/tampayan/swim.webp" },
+  { id: "s25", name: "Baldwin Cafe & Resto", barangay: "poblacion", category: "Foods",    lat: 12.493697567114628,  lng: 122.50991444246773, desc: "", image: "assets/spots/tampayan/swim.webp" }
 ];
