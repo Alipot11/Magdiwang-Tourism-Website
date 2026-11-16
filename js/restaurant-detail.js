@@ -199,6 +199,8 @@
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     map.setView([spot.lat, spot.lng], 15);
+    setTimeout(() => map.invalidateSize(), 0);
+    window.addEventListener("resize", () => map.invalidateSize());
     L.circleMarker([spot.lat, spot.lng], { radius: 9, color: "#0f172a", weight: 3, fillColor: "#f59e0b", fillOpacity: 1 }).addTo(map);
   }
 

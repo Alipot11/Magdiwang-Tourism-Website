@@ -69,7 +69,8 @@ section[hidden] { display: none; }
 
 /* Contact + mini map */
 .ldcon { padding: 80px 0 88px; }
-.ldcon__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.ldcon__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.ldcon__grid > * { min-width: 0; }
 .ldcon h2 { margin-bottom: 20px; }
 .ldcon__list { list-style: none; display: grid; gap: 10px; font-size: 1.05rem; }
 .ldcon__list a { text-decoration: underline; }
@@ -78,9 +79,11 @@ section[hidden] { display: none; }
 .ldcon__back:hover { text-decoration: underline; }
 .ldcon__map { height: 300px; border: 1px solid #dde4ee; border-radius: var(--radius); overflow: hidden; z-index: 0; }
 .ldcon__map[hidden] { display: none; }
+.ldcon__list li { overflow-wrap: anywhere; }
+.ldcon__map { width: 100%; max-width: 100%; }
 
 @media (max-width: 900px) {
-  .ldabout__grid, .ldcon__grid { grid-template-columns: 1fr; gap: 28px; }
+  .ldabout__grid, .ldcon__grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .ldph__btn--prev { left: 8px; }
   .ldph__btn--next { right: 8px; }
   .ldph__tile { height: 320px; }

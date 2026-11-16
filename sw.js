@@ -1,7 +1,7 @@
 // Magdiwang Tourism service worker. Keep this file in the project ROOT
 // so it covers index.html, html/*, assets/*, etc.
 // When you change code or data, bump VERSION so visitors get the update.
-const VERSION = "v1.0.1.4"; // last updated 11-13-2026
+const VERSION = "v1.0.1.5"; // last updated 11-16-2026
 const CORE = "magdiwang-core-" + VERSION;
 const TILES = "magdiwang-tiles";
 const MAX_TILES = 400;
@@ -129,9 +129,9 @@ function save(cacheName, req, res) {
 self.addEventListener("fetch", event => {
   const req = event.request;
   // Live weather: always ask the network. The page keeps its own saved copy for offline use.
-  if (url.hostname === "api.open-meteo.com") return;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
+  if (url.hostname === "api.open-meteo.com") return;
 
   // Map tiles: cache as the visitor browses, keep the most recent ones
   if (url.hostname.endsWith("tile.openstreetmap.org")) {
