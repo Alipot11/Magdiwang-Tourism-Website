@@ -53,6 +53,57 @@
   }
   facts.hidden = !facts.children.length;
 
+    // ----- News (hidden when there is nothing to show) -----
+  const news = (r.news || []).filter(n => n.title);
+  if (!news.length) {
+    $("news").hidden = true;
+  } else {
+    $("news").hidden = false;
+    const nl = $("r-news");
+    news.forEach(n => {
+      const row = make("article", "rnews__row" + (n.image ? "" : " rnews__row--text"));
+      const body = make("div", "rnews__body");
+      const title = make("div", "rnews__title");
+      if (/^https:\/\//.test(n.link || "")) {
+        const a = make("a", "", n.title);
+        a.href = n.link; a.target = "_blank"; a.rel = "noopener";
+        title.appendChild(a);
+      } else {
+        title.textContent = n.title;
+      }
+      body.appendChild(title);
+      if (n.desc) body.appendChild(make("p", "rnews__desc", n.desc));
+      row.append(make("span", "rnews__date", n.date || ""), body);
+      if (n.image) {
+        const photo = make("div", "rnews__photo");
+        photo.style.backgroundImage = img(n.image);
+        photo.setAttribute("role", "img");
+        photo.setAttribute("aria-label", n.title);
+        row.appendChild(photo);
+      }
+      nl.appendChild(row);
+    });
+
+    // Show only the latest few, the rest sit behind a button
+    const LIMIT = 1;
+    const extra = [...nl.children].slice(LIMIT);
+    if (extra.length) {
+      extra.forEach(x => { x.hidden = true; });
+      const more = make("button", "rnews__more");
+      more.type = "button";
+      more.setAttribute("aria-expanded", "false");
+      const label = "Show " + extra.length + " older " + (extra.length === 1 ? "update" : "updates");
+      more.textContent = label;
+      more.addEventListener("click", () => {
+        const open = more.getAttribute("aria-expanded") === "true";
+        extra.forEach(x => { x.hidden = open; });
+        more.setAttribute("aria-expanded", String(!open));
+        more.textContent = open ? label : "Show fewer";
+      });
+      nl.after(more);
+    }
+  }
+
   // ----- Signature dish -----
   const sig = r.signature;
   if (sig) {
@@ -207,7 +258,7 @@
     // ----- Section bar: only sections that are shown -----
   const bar = $("subnav");
   const mapLink = $("r-map-link");
-  [["about", "About"], ["kitchen", "Dishes"], ["contact-info", "Contact"]].forEach(s => {
+  [["about", "About"], ["news", "News"], ["kitchen", "Dishes"], ["contact-info", "Contact"]].forEach(s => {
     const el = $(s[0]);
     if (!el || el.hidden) return;
     const a = make("a", "", s[1]);

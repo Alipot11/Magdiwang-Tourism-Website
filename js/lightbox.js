@@ -24,6 +24,7 @@
     { sel: ".rdish__card", scope: ".rdish__mob", info: el => ({ caption: text(el.querySelector("span")) }) },
     { sel: ".kayak__photos div", info: () => ({ caption: text(document.getElementById("kayak-title")) }) },
     { sel: ".swim__photo", info: el => ({ caption: el.dataset.lbLabel || "" }) },
+    { sel: ".rnews__photo", info: el => ({ caption: text(el.closest(".rnews__row").querySelector(".rnews__title")) }) },
     { sel: ".sp__photo", info: el => {
         const card = el.closest(".sp");
         return { caption: text(card.querySelector(".sp__name")), credit: text(card.querySelector(".sp__credit")) };

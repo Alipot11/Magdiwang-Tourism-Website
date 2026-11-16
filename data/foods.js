@@ -22,12 +22,15 @@ window.RESTAURANTS = [
   { id: "r1", name: "Baldwin cafe & resto", barangay: "Poblacion", cuisine: "",
     blurb: "Try Baldwin's wide range of dishes or taste a sip with thier drinks", image: "assets/foods/baldwin/baldwin.webp",
     heroImages: [],
-    about: "Enjoy the relaxing vibe of Sibuyan while eating with families and friends. Choose from a wide range of food and find the taste that best suits you.",
+    about: "Enjoy the relaxing vibe of Sibuyan while eating with families and friends, or just take a sit relax and enjoy refreshing beverages and create more memorable experiences while in Magdiwang. Choose from a wide range of foods and beverages to find the taste that best suits you.",
     hours: "Mon - Sat: 11am to 8pm | Sun: 11am to 7pm",
     phone: "0921 581 8670", gmail: "", facebook: "https://www.facebook.com/baldwinsbaken.brew", website: "",
     aboutImage: "assets/foods/baldwin/about.webp",   // optional photo behind the About section, e.g. "assets/foods/r1/about.webp"
     location: "Near Grandview Hotel", spot: "s25",
     signature: { name: "Barkada Fries", image: "assets/foods/baldwin/img-1.webp", desc: "Better enjoyed with family or friends" },
+    news: [
+      { date: "Nov 2026", title: "Christmas special", desc: "Try the new berry matcha it's the perfect balance of fruity, creamy, and festive flavors.", image: "assets/foods/baldwin/news.webp", link: "" },
+    ],
     dishes: [
       { name: "Crispy Bagnet", image: "assets/foods/baldwin/img-2.webp" }, { name: "BBQ Back Ribs", image: "assets/foods/baldwin/img-3.webp" }, { name: "Biscoff Latte", image: "assets/foods/baldwin/img-4.webp" },
       { name: "Chicken Popcorn", image: "assets/foods/baldwin/img-5.webp" }, { name: "Sizzling Burger Stake", image: "assets/foods/baldwin/img-6.webp" }, { name: "Biscoff Latte", image: "assets/foods/baldwin/img-7.webp" },
