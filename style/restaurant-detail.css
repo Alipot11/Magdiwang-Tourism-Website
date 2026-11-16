@@ -77,7 +77,8 @@ section[id] { scroll-margin-top: 130px; }
 /* Find us */
 /* Contact + mini map (same setup as the lodging pages) */
 .rcon { padding: 80px 0 88px; }
-.rcon__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.rcon__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.rcon__grid > * { min-width: 0; }
 .rcon h2 { margin-bottom: 20px; }
 .rcon__list { list-style: none; display: grid; gap: 10px; font-size: 1.05rem; }
 .rcon__list a { text-decoration: underline; }
@@ -85,6 +86,8 @@ section[id] { scroll-margin-top: 130px; }
 .rcon__back { display: inline-block; margin-top: 28px; font-weight: 500; }
 .rcon__back:hover { text-decoration: underline; }
 .rcon__map { height: 300px; border: 1px solid #dde4ee; border-radius: var(--radius); overflow: hidden; z-index: 0; }
+.rcon__list li { overflow-wrap: anywhere; }
+.rcon__map { width: 100%; max-width: 100%; }
 
 .rmissing { padding: 96px 24px; text-align: center; }
 .rmissing p { margin-top: 16px; }
@@ -97,7 +100,7 @@ section[id] { scroll-margin-top: 130px; }
   .rdish__btn--next { right: 8px; }
   .rdish__slide { grid-template-rows: 170px 170px; }
   .rdish__btn { top: 170px; }
-  .rcon__grid { grid-template-columns: 1fr; gap: 28px; }
+  .rcon__grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 }
 @media (max-width: 720px) {
   .rhero { min-height: 56vh; }
