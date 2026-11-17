@@ -28,7 +28,11 @@
     { sel: ".sp__photo", info: el => {
         const card = el.closest(".sp");
         return { caption: text(card.querySelector(".sp__name")), credit: text(card.querySelector(".sp__credit")) };
-      } }
+      } },
+    { sel: ".gal__tile", info: el => ({
+        caption: text(el.querySelector(".gal__title")),
+        credit: [text(el.querySelector(".gal__desc")), text(el.querySelector(".gal__where"))].filter(Boolean).join(" \u00B7 ")
+      }) },
   ];
   const SCROLLERS = ".falls__view, .mom__view, .coast__view, .cafe__strip, .rdish__view, .rdish__strip";
 

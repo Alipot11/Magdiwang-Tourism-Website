@@ -1,0 +1,22 @@
+/* Photo gallery (homepage): builds on index.css (variables, .wrap, .lead) */
+.gallery { background: var(--bg-soft); padding: 70px 0 80px; }
+.gallery .lead { margin: 8px 0 32px; }
+
+/* Masonry: columns keep each photo's own proportions */
+.gal { columns: 3; column-gap: 16px; }
+.gal__tile { position: relative; width: 100%; margin: 0 0 16px; break-inside: avoid; aspect-ratio: 4 / 3; background: #dde4ee center / cover no-repeat; border-radius: 4px; overflow: hidden; color: #fff; }
+.gal__cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 16px 14px; background: linear-gradient(to top, rgba(15,23,42,.85), transparent); }
+.gal__title { font-weight: 600; font-size: 1.05rem; line-height: 1.2; }
+.gal__desc { font-size: .85rem; opacity: .92; margin-top: 2px; }
+.gal__where { display: block; margin-top: 6px; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; opacity: .8; }
+
+@media (max-width: 900px) { .gal { columns: 2; } }
+@media (max-width: 720px) {
+  .gallery { padding: 48px 0 56px; }
+  .gallery h2 { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+  .gal { column-gap: 12px; }
+  .gal__tile { margin-bottom: 12px; }
+  .gal__desc { display: none; } /* shown in the lightbox instead */
+}
