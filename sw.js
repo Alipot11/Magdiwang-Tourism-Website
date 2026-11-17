@@ -1,7 +1,7 @@
 // Magdiwang Tourism service worker. Keep this file in the project ROOT
 // so it covers index.html, html/*, assets/*, etc.
 // When you change code or data, bump VERSION so visitors get the update.
-const VERSION = "v1.0.1.6"; // last updated 11-16-2026
+const VERSION = "v1.0.1.7"; // last updated 11-16-2026
 const CORE = "magdiwang-core-" + VERSION;
 const TILES = "magdiwang-tiles";
 const MAX_TILES = 400;
@@ -37,6 +37,9 @@ const PRECACHE = [
   "style/weather.css",
   "style/restaurant-detail.css",
   "style/lightbox.css",
+  "style/stats.css",
+  "style/gallery.css",
+  "style/hotlines.css",
   "js/main.js",
   "js/home.js",
   "js/map.js",
@@ -53,6 +56,9 @@ const PRECACHE = [
   "js/weather.js",
   "js/restaurant-detail.js",
   "js/lightbox.js",
+  "js/stats.js",
+  "js/gallery.js",
+  "js/hotlines.js",
   "data/spots.js",
   "data/explore.js",
   "data/nature.js",
@@ -62,6 +68,8 @@ const PRECACHE = [
   "data/events.js",
   "data/culture.js",
   "data/updates.js",
+  "data/gallery.js",
+  "data/hotlines.js",
   "assets/tourism-logo.png",
   "assets/tourism-logo.ico",
   "assets/Magdiwang-seal.png",

@@ -1,0 +1,22 @@
+/* Emergency hotlines (homepage): builds on index.css (variables, .wrap, .lead) */
+.hotlines { background: var(--navy); color: #fff; padding: 72px 0 80px; border-top: 1px solid rgba(255,255,255,.18); }
+.hotlines h2 { font-size: 2.2rem; font-weight: 700; }
+.hotlines .lead { color: rgba(255,255,255,.75); margin: 8px 0 40px; }
+
+.hotlines__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; }
+.hot { border-top: 2px solid rgba(255,255,255,.7); padding-top: 16px; }
+.hot__name { font-weight: 600; font-size: 1.05rem; }
+.hot__num { display: inline-block; margin-top: 6px; font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.15; overflow-wrap: anywhere; }
+a.hot__num { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,.4); }
+a.hot__num:hover { text-decoration-color: #fff; }
+a.hot__num:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.hot__num--soon { font-size: 1.1rem; font-weight: 400; opacity: .6; text-decoration: none; }
+.hot__note { margin-top: 6px; color: rgba(255,255,255,.75); font-size: .92rem; max-width: 320px; }
+
+@media (max-width: 900px) { .hotlines__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) {
+  .hotlines { padding: 48px 0 56px; }
+  .hotlines h2 { font-size: 2rem; }
+  .hotlines .lead { margin-bottom: 28px; }
+  .hotlines__grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}

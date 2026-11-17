@@ -1,0 +1,19 @@
+/* Stats band (homepage): builds on index.css (variables, .wrap) */
+.stats { background: var(--navy); color: #fff; padding: 72px 0 64px; }
+.stats h2 { font-size: 2.2rem; font-weight: 700; }
+.stats__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 40px; }
+.stats__item { border-top: 2px solid rgba(255,255,255,.7); padding-top: 16px; }
+.stats__num { font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.stats__label { margin-top: 10px; opacity: .8; }
+.stats__more { display: inline-block; margin-top: 40px; padding-bottom: 2px; border-bottom: 2px solid #fff; font-weight: 500; }
+.stats__more:hover { opacity: .75; }
+.stats__more:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+@media (max-width: 900px) {
+  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+}
+@media (max-width: 720px) {
+  .stats { padding: 48px 0 44px; }
+  .stats h2 { font-size: 2rem; }
+  .stats__grid { margin-top: 28px; }
+}
